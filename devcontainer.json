@@ -1,0 +1,22 @@
+{
+    "name": "art_museum",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "app",
+    "workspaceFolder": "/workspace",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-toolsai.jupyter"
+            ],
+            "settings": {
+                "workbench.colorCustomizations": {
+                    "titleBar.activeBackground": "#0850a7",
+                    "titleBar.activeForeground": "#ffffff",
+                    "activityBar.background": "#3854e0",
+                    "activityBar.foreground": "#ffffff"
+                }
+            }
+        }
+    }
+}
