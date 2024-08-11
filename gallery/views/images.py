@@ -6,7 +6,7 @@ logger = logging.getLogger(__name__)
 
 def top(request):
     artist = User.objects.all()
-    logger.info("artist: %s", artist)
+    logger.debug("artist: %s", artist)
     logger.info("ok")
-    logger.info("artist_dict:", list(artist)[0])
+    logger.debug("artist_dict:", list(artist)[0])
     return render(request, 'top.html', {'artist': artist})

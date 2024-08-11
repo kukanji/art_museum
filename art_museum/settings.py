@@ -35,7 +35,7 @@ LOGGING = {
         "handlers": ["console"],
         "level": "WARNING",
     },
-    "propagate": False,
+    #"propagate": False,
 }
 
 # Quick-start development settings - unsuitable for production

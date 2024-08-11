@@ -8,7 +8,7 @@ RUN apt-get update && \
     pip install --upgrade pip
 
 # Install Basic Packages
-RUN pip install ipykernel jupyter
+# RUN pip install ipykernel jupyter
 
 # 作業ディレクトリを作成
 WORKDIR /workspace
@@ -21,4 +21,4 @@ RUN pip install -r requirements.txt
 COPY . /workspace/
 
 # デフォルトコマンド
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
