@@ -1,0 +1,28 @@
+<html>
+    <!--{% load static %}-->
+    <head>
+		<title>ようこそ</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <!--<link rel="icon" type="image/png" href="{% static 'top_page.png' %}" />-->
+	</head>
+    <body style="background:#d5eee6;color:#336699">
+            <div style="text-align:center">
+                <h1 style="font-size:x-large;color:#9933ff">
+                    TopPage
+                </h1>
+                <h1 style="font-size:x-large;color:#cc0099">
+                    Welcome to this website!🎉 
+                </h1>
+                </h2>
+                <h2 style="font-size:x-large;color:#ffa500">
+                    Artist  
+                </h2>
+            <nav>
+                {% for artist in artist_list %}
+                    <ul style="list-style-type: none;">
+                        <li><a href="{% url 'artist_home' artist.username %}" calss="btn btn-primary">{{artist.username}}</a></li>
+                    </ul>
+                {% endfor %}
+            </nav>
+    </body>
+</html>

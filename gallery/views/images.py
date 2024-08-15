@@ -4,9 +4,10 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-def top(request):
-    artist = User.objects.all()
-    logger.debug("artist: %s", artist)
-    logger.info("ok")
-    logger.debug("artist_dict:", list(artist)[0])
-    return render(request, 'top.html', {'artist': artist})
+def top_page(request):
+    artist_list = User.objects.all()
+    return render(request, 'top_page.html', {'artist_list': artist_list})
+
+def artist_home(request, username):
+    artist = User.objects.get(username=username)
+    return render(request, 'artist_home.html', {'artist': artist})
