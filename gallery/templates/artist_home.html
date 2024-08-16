@@ -13,10 +13,10 @@
                 <h1 style="font-size:x-large;color:#cc0099">
                     Hi Welcome to {{ username }}!🎉 
                 </h1>
-                <p>{{ get_single_artist_home.description | linebreaksbr }}</p>
+                <p>{{ single_artist_home.description | linebreaksbr }}</p>
                 <p>
-                    <!--<a href="{{get_single_artist_home.art.url}}">-->
-                        <img src="{{get_single_artist_home.art.url}}" style="width:50%">
+                    <!--<a href="{{single_artist_home.art.url}}">-->
+                        <img src="{{single_artist_home.art.url}}" style="width:50%">
                     </a>
                 </p>
                 </h2>
@@ -24,7 +24,7 @@
                     Works
                 </h2>
             <nav>
-                {% for single_gallery in get_multiple_gallery %}
+                {% for single_gallery in multiple_gallery %}
                     <ul style="list-style-type: none;">
                         <li><a href="{% url 'gallery' single_gallery.artist.username single_gallery.title %}" calss="btn btn-primary">{{single_gallery.title}}</a></li>
                     </ul>

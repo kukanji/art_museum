@@ -12,9 +12,9 @@
 			<h1 style="font-size:x-large;color:#cc0099">
             {{ title }}
             </h1>
-                <p>{{ get_single_gallery.description | linebreaksbr }}</p>
+                <p>{{ single_gallery.description | linebreaksbr }}</p>
             <div style="display: grid;grid-gap: 10px;grid-template-columns: 1fr 1fr">
-                {% for single_art in get_multiple_art %}
+                {% for single_art in multiple_art %}
                     <a href="{{ single_art.art.url }}"><!--この行にはコメントなどを追加できる新しいページをあとで付け加える-->
                     <img src="{{ single_art.art.url }}" style="object-fit: cover;width:100%">
                     </a>
@@ -27,7 +27,7 @@
                     <ul style="list-style-type: none;">
                         <li><a href="{% url 'artist_home' username %}" class="btn btn-primary">Home</a></li>
                     </ul>
-                {% for single_gallery in get_multiple_gallery %}
+                {% for single_gallery in multiple_gallery %}
                     <ul style="list-style-type: None;">
                         <li><a href="{% url 'gallery' username single_gallery.title %}" calss="btn btn-primary">{{single_gallery.title}}</a></li>
                     </ul>

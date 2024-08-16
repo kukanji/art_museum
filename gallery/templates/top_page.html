@@ -18,7 +18,7 @@
                     Artist  
                 </h2>
             <nav>
-                {% for single_artist in get_all_artist %}
+                {% for single_artist in all_artist %}
                     <ul style="list-style-type: none;">
                         <li><a href="{% url 'artist_home' single_artist.username %}" calss="btn btn-primary">{{single_artist.username}}</a></li>
                     </ul>
