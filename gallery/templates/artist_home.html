@@ -15,7 +15,7 @@
                 </h1>
                 <p>{{ get_single_artist_home.description | linebreaksbr }}</p>
                 <p>
-                    <a href="{{get_single_artist_home.art.url}}">
+                    <!--<a href="{{get_single_artist_home.art.url}}">-->
                         <img src="{{get_single_artist_home.art.url}}" style="width:50%">
                     </a>
                 </p>
@@ -24,9 +24,9 @@
                     Works
                 </h2>
             <nav>
-                {% for single_gallery in get_multiple_artist_gallery %}
+                {% for single_gallery in get_multiple_gallery %}
                     <ul style="list-style-type: none;">
-                        <li><a href="{% url 'gallery' single_gallery.artist.username %}" calss="btn btn-primary">{{single_gallery.title}}</a></li>
+                        <li><a href="{% url 'gallery' single_gallery.artist.username single_gallery.title %}" calss="btn btn-primary">{{single_gallery.title}}</a></li>
                     </ul>
                 {% endfor %}
             </nav>
