@@ -35,3 +35,13 @@ class Art(models.Model):
     def __str__(self):
         return self.title
     
+
+class Comment(models.Model):
+    art = models.ForeignKey(Art, on_delete=models.CASCADE)
+    comment = models.TextField(null=False, blank=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.comment
+    
