@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
-from gallery.models import Home, Gallery, Art
+from gallery.models import Home, Gallery, Art, Comment
 #import logging
 
 #logger = logging.getLogger(__name__)
@@ -8,6 +8,7 @@ from gallery.models import Home, Gallery, Art
 def top_page(request):
     all_artist = User.objects.all()
     return render(request, 'top_page.html', {'all_artist': all_artist})
+
 
 def artist_home(request, username):
     print("username: ", username)
@@ -18,6 +19,7 @@ def artist_home(request, username):
     return render(request, 'artist_home.html', {'username': username,
                                                 'single_artist_home': single_artist_home,
                                                 'multiple_gallery': multiple_gallery})
+
 
 def gallery(request, username, title):
     single_artist = User.objects.get(username=username)
@@ -30,3 +32,11 @@ def gallery(request, username, title):
                                             'multiple_gallery': multiple_gallery,
                                             'single_gallery': single_gallery,
                                             'multiple_art': multiple_art})
+
+
+def comment(request, username, title, single_art_url):
+    multiple_comment = Comment.objects.filter(art = single_art_url)
+    return render(request, 'comment.html', {'username': username,
+                                           'title': title,
+                                           'single_art_url': single_art_url,
+                                           'multiple_comment': multiple_comment})
