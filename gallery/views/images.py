@@ -34,10 +34,8 @@ def gallery(request, username, title):
                                             'multiple_art': multiple_art})
 
 
-def comment(request, username, title):
-    # multiple_comment = Comment.objects.filter(art = )
-    # return render(request, 'comment.html', {'username': username,
-    #                                        'title': title,
-    #                                        'multiple_comment': multiple_comment})
+def comment(request, username, title, single_art_id):
+    multiple_comment = Comment.objects.filter(art_id = single_art_id)
     return render(request, 'comment.html', {'username': username,
-                                           'title': title})
+                                           'title': title,
+                                           'multiple_comment': multiple_comment})
