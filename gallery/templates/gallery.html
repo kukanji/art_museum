@@ -13,10 +13,10 @@
             {{ title }}
             </h1>
                 <p>{{ single_gallery.description | linebreaksbr }}</p>
-            <div style="display: grid;grid-gap: 10px;grid-template-columns: 1fr 1fr">
+            <div style="display: grid;grid-gap: 0px;grid-template-columns: 1fr 1fr">
                 {% for single_art in multiple_art %}
                     <a href="{% url 'comment' username title %}"><!--この行にはコメントなどを追加できる新しいページをあとで付け加える-->
-                        <img src="{{ single_art.art.url }}" style="object-fit: cover;width:100%">
+                        <img src="{{ single_art.art.url }}" style="object-fit: cover;width:100%; height: auto; margin: 0; padding: 0; border: none;">
                     </a>
                 {% endfor %}
             </div>
