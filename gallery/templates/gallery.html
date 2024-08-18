@@ -1,0 +1,38 @@
+<html>
+    {% load static %}
+    <head>
+        <title>
+            {{ username }} Works
+        </title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="icon" type="image/png" href="{% static 'gallery.png' %}" />
+    </head>
+    <body style="background:#d5eee6;color:#336699">
+		<div style="text-align:center">
+			<h1 style="font-size:x-large;color:#cc0099">
+            {{ title }}
+            </h1>
+                <p>{{ single_gallery.description | linebreaksbr }}</p>
+            <div style="display: grid;grid-gap: 0px;grid-template-columns: 1fr 1fr">
+                {% for single_art in multiple_art %}
+                    <a href="{% url 'comment' username title single_art.id %}"><!--この行にはコメントなどを追加できる新しいページをあとで付け加える-->
+                        <img src="{{ single_art.art.url }}" style="object-fit: cover;width:100%; height: auto; margin: 0; padding: 0; border: none;">
+                    </a>
+                {% endfor %}
+            </div>
+            <h2 style="font-size:x-large;color:#ffa500">
+                Other works
+            </h2>
+            <nav>
+                    <ul style="list-style-type: none;">
+                        <li><a href="{% url 'artist_home' username %}" class="btn btn-primary">Home</a></li>
+                    </ul>
+                {% for single_gallery in multiple_gallery %}
+                    <ul style="list-style-type: None;">
+                        <li><a href="{% url 'gallery' username single_gallery.title %}" calss="btn btn-primary">{{single_gallery.title}}</a></li>
+                    </ul>
+                {% endfor %}
+            </nav>
+        </div>
+    </body>
+</html>

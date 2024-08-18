@@ -1,0 +1,34 @@
+<html>
+    {% load static %}
+    <head>
+		<title>{{ username }}</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="icon" type="image/png" href="{% static 'artist_home.png' %}" />
+    </head>
+    <body style="background:#d5eee6;color:#336699">
+            <div style="text-align:center">
+                <h1 style="font-size:x-large;color:#9933ff">
+                    Artist Page
+                </h1>
+                <h1 style="font-size:x-large;color:#cc0099">
+                    Hi Welcome to {{ username }}!🎉 
+                </h1>
+                <p>{{ single_artist_home.description | linebreaksbr }}</p>
+                <p>
+                    <!--<a href="{{single_artist_home.art.url}}">-->
+                        <img src="{{single_artist_home.art.url}}" style="width:50%">
+                    </a>
+                </p>
+                </h2>
+                <h2 style="font-size:x-large;color:#ffa500">
+                    Works
+                </h2>
+            <nav>
+                {% for single_gallery in multiple_gallery %}
+                    <ul style="list-style-type: none;">
+                        <li><a href="{% url 'gallery' single_gallery.artist.username single_gallery.title %}" calss="btn btn-primary">{{single_gallery.title}}</a></li>
+                    </ul>
+                {% endfor %}
+            </nav>
+    </body>
+</html>
