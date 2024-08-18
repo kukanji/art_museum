@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from gallery.models import Home, Gallery, Art, Comment
+from gallery.serializers import HomeSerializer
+
 #import logging
 
 #logger = logging.getLogger(__name__)
@@ -39,3 +41,4 @@ def comment(request, username, title, single_art_id):
     return render(request, 'comment.html', {'username': username,
                                            'title': title,
                                            'multiple_comment': multiple_comment})
+
