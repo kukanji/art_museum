@@ -5,7 +5,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('gallery.urls')),
+    path('gallery', include('gallery.urls')),
+    path('artgallery', include('artgallery.urls')),
     *static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT),
     *static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
     # path()はプログラムファイル,static()はCSS等の静的ファイルを呼び出す
