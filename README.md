@@ -1,4 +1,4 @@
-# art_museum
+# artmuseum
 
 
 # installed
