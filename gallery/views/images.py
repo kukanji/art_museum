@@ -1,10 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from gallery.models import Home, Gallery, Art, Comment
-<<<<<<< HEAD
-
-=======
->>>>>>> parent of 6ad66ef (django-environをインストールすることでなぜかSerializersがimport出来るようになった)
 #import logging
 
 #logger = logging.getLogger(__name__)
