@@ -4,7 +4,7 @@ USER root
 
 RUN apt-get update && \
     apt-get -y install --reinstall ca-certificates && \
-    apt-get -y install software-properties-common && \
+    apt-get -y install software-properties-common nodejs npm && \
     pip install --upgrade pip
 
 # Install Basic Packages
