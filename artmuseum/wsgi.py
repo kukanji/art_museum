@@ -1,5 +1,5 @@
 """
-WSGI config for art_museum project.
+WSGI config for artmuseum project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'art_museum.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'artmuseum.settings')
 
 application = get_wsgi_application()
