@@ -14,3 +14,14 @@ class HomeSerializer(serializers.ModelSerializer):
         model = Home
         fields = ['id', 'artist', 'art', 'description', 'instagram', 'twitter', 'created_at', 'updated_at']
 
+
+class GallerySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Gallery
+        fields = ['id', 'artist', 'title', 'description', 'created_at', 'updated_at']
+
+
+class CommentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Comment
+        fields = ['id', 'art', 'comment', 'created_at', 'updated_at']
