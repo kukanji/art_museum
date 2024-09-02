@@ -22,10 +22,10 @@ function App() {
 
   return (
     <>
-      <h1>React App</h1>
+      <h1>ArtMuseum</h1>
       <ul>
         {data.map((item) => (
-          <li key={item.id}>{item.description}</li>
+          <li key={item.id}>{item.artist}</li>
         ))}
       </ul>
     </>
