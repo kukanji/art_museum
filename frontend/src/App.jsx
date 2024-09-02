@@ -19,21 +19,6 @@ function App() {
     };
     getData();
   }, []);
-  
-  //   axios
-  //     .get(`http://127.0.0.1:8000/artgallery/home/`)
-  //     .then((response) => {
-  //       console.log(response.data);
-  //       setData(response.data);
-  //     })
-  //     .catch((error) => console.log(error));
-  // }, []);
-  // axios
-  //   .get(`http://127.0.0.1:8000/artgallery/home/`)
-  //   // .get(`${import.meta.env.PYTHON_API_URL}${'/home/'}`)
-  //   // console.log(`${import.meta.env.PYTHON_API_URL}${'/home/'}`)
-  //   .then((response) => console.log(response))
-  //   .catch((error) => console.log(error));
 
   return (
     <>
