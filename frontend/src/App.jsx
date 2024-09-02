@@ -7,7 +7,7 @@ import './App.css'
 function App() {
 
   axios
-      .get(`http://127.0.0.1:8000/artgallery/home/`)
+      .get(`${import.meta.env.PYTHON_API_URL}${'/home/'}`)
       .then((response) => console.log(response))
       .catch((error) => console.log(error));
 
