@@ -26,7 +26,7 @@ export const Top = () => {
                     {data.map((item) => (
                         <div key={item.id}>
                             <li>
-                                <Link to={`/home/${item.username}`}>link to {item.username} home</Link>
+                                <Link to={`/home/${item.id}`}>link to {item.username} home</Link>
                             </li>
                             
                         </div>

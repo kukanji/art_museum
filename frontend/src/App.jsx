@@ -28,7 +28,7 @@ function App() {
         <NavBar />
           <Routes>
             <Route path="/" element={<Top />} />
-            <Route path="/home/:username" element={<Home />} />
+            <Route path="/home/:artist_id" element={<Home />} />
           </Routes>
       </BrowserRouter>
       {/* <ul>
