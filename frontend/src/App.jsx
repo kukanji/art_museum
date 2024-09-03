@@ -1,9 +1,9 @@
-import { useState } from 'react'
-import { useEffect } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
+import { useState, useEffect } from 'react'
 import axios from 'axios';
 import './App.css'
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import { Top } from './pages/Top'
+import { Home } from './pages/Home'
 
 function App() {
   const [data, setData] = useState([]);
@@ -23,6 +23,16 @@ function App() {
   return (
     <>
       <h1>ArtMuseum</h1>
+      <BrowserRouter>
+        <div>
+          <Link to="/">Top</Link>
+          <Link to="/home">Home</Link>
+          <Routes>
+            <Route path="/" element={<Top />} />
+            <Route path="/home" element={<Home />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
       <ul>
         {data.map((item) => (
           <li key={item.id}>{item.artist}</li>
