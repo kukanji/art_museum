@@ -30,14 +30,15 @@ export const Home = () => {
     return (
         <div>
             Home.jsxのページを表示しています。
-
-            <p>{homeData.description}</p>
             <nav>
                 <ul>
                     {galleryData.map((item) => (
                         <div key={item.id}>
                             <li>
-                                <Link to={`/gallery/${item.title}`}>{item.title}</Link>
+                                <p>{item.title}</p>
+                                {/* <Link to={`/gallery/${params.artist_id}`}>{item.title}</Link> */}
+                                <Link to={{ pathname: `/gallery/${params.artist_id}`, search: `?title=${item.title}`}}>{item.title}</Link>
+                                {/* <Link to={{ pathname: `/gallery/${artist_id}`, search: ?title=title}}>{item.title}</Link> */}
                             </li>
                             
                         </div>
