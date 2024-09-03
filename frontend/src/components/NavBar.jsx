@@ -3,7 +3,6 @@ import { Outlet, Link } from "react-router-dom";
 export const NavBar = () => {
   return (
     <>
-    {console.log('NavBar.jsxのページを表示しています。')}
       <nav>
         <ul>
           <li>
