@@ -7,19 +7,24 @@ export const Home = () => {
     const params = useParams();
     console.log(params);
     const [homeData, setHomeData] = useState([]);
+    const [galleryData, setGalleryData] = useState([]);
     useEffect(() => {
-    const getHomeData = async () => {
+    const getData = async () => {
       try {
         // const response = await axios.get(`${import.meta.env.VITE_API_URL}/home/`);
-        console.log(`artist_id:${params.artist_id}`);
-        const response = await axios.get(`${import.meta.env.VITE_API_URL}/home/${params.artist_id}/`);
-        console.log(response);
-        setHomeData(response.data);
+        // console.log(`artist_id:${params.artist_id}`);
+        const homeResponse = await axios.get(`${import.meta.env.VITE_API_URL}/home/${params.artist_id}/`);
+        const galleryResponse = await axios.get(`${import.meta.env.VITE_API_URL}/gallery/`);
+        // console.log(`homeResponse:${homeResponse.data}`);
+        console.log(homeResponse.data);
+        console.log(galleryResponse.data);
+        setHomeData(homeResponse.data);
+        setGalleryData(galleryResponse.data);
       } catch (error) {
         console.error(error);
       }
     };
-    getHomeData();
+    getData();
     }, []);
 
     return (
@@ -27,19 +32,19 @@ export const Home = () => {
             Home.jsxのページを表示しています。
 
             <p>{homeData.description}</p>
-            {/* <nav>
+            <nav>
                 <ul>
-                    {data.map((item) => (
+                    {galleryData.map((item) => (
                         <div key={item.id}>
                             <li>
-                                <p>{item.description}</p>
+                                <Link to={`/gallery/${item.title}`}>{item.title}</Link>
                             </li>
                             
                         </div>
                     ))}
                     
                 </ul>
-            </nav> */}
+            </nav>
         </div>
     );
 };
