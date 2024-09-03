@@ -25,10 +25,10 @@ function App() {
     <>
       <h1>ArtMuseum</h1>
       <BrowserRouter>
+        <NavBar />
           <Routes>
-            <Route path="/NavBar" element={<NavBar />} />
-              <Route path="/" element={<Top />} />
-              <Route path="/home" element={<Home />} />
+            <Route path="/" element={<Top />} />
+            <Route path="/home" element={<Home />} />
           </Routes>
       </BrowserRouter>
       <ul>
