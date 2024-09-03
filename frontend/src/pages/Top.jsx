@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useState, useEffect } from 'react'
 import axios from 'axios';
 
@@ -20,11 +21,19 @@ export const Top = () => {
         <>
             <div>
             TopPageを表示しています
-            <ul>
-                {data.map((item) => (
-                <li key={item.id}>{item.username}</li>
-                ))}
-            </ul>
+            <nav>
+                <ul>
+                    {data.map((item) => (
+                        <div key={item.id}>
+                            <li>
+                                <Link to={`/home/${item.username}`}>link to {item.username} home</Link>
+                            </li>
+                            
+                        </div>
+                    ))}
+                    
+                </ul>
+            </nav>
             あいうえおかきくけこ
             </div>
         </> 
