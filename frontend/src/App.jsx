@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
-import axios from 'axios';
+// import { useState, useEffect } from 'react'
+// import axios from 'axios';
 import './App.css'
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import { NavBar } from './components/NavBar';
@@ -23,7 +23,7 @@ function App() {
 
   return (
     <>
-      <h1>ArtMuseum</h1>
+      App.jsxのページを表示しています
       <BrowserRouter>
         <NavBar />
           <Routes>
