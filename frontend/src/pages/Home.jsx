@@ -13,8 +13,6 @@ export const Home = () => {
         // const response = await axios.get(`${import.meta.env.VITE_API_URL}/home/`);
         console.log(`artist_id:${params.artist_id}`);
         const response = await axios.get(`${import.meta.env.VITE_API_URL}/home/${params.artist_id}/`);
-        
-        console.log(`response.data:${response.data}`);
         setData(response.data);
       } catch (error) {
         console.error(error);
@@ -25,6 +23,7 @@ export const Home = () => {
     return (
         <div>
             Home.jsxのページを表示しています。
+
             <p>{data.description}</p>
             {/* <nav>
                 <ul>
