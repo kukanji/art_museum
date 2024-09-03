@@ -14,7 +14,7 @@ export const Home = () => {
         console.log(`artist_id:${params.artist_id}`);
         const response = await axios.get(`${import.meta.env.VITE_API_URL}/home/${params.artist_id}/`);
         console.log(response);
-        setHomeData(response.homeData);
+        setHomeData(response.data);
       } catch (error) {
         console.error(error);
       }
