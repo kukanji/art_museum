@@ -6,25 +6,27 @@ import axios from 'axios';
 export const Home = () => {
     const params = useParams();
     console.log(params);
-    const [data, setData] = useState([]);
+    const [homeData, setHomeData] = useState([]);
     useEffect(() => {
-    const getData = async () => {
+    const getHomeData = async () => {
       try {
         // const response = await axios.get(`${import.meta.env.VITE_API_URL}/home/`);
         console.log(`artist_id:${params.artist_id}`);
         const response = await axios.get(`${import.meta.env.VITE_API_URL}/home/${params.artist_id}/`);
-        setData(response.data);
+        console.log(response);
+        setHomeData(response.homeData);
       } catch (error) {
         console.error(error);
       }
     };
-    getData();
+    getHomeData();
     }, []);
+
     return (
         <div>
             Home.jsxのページを表示しています。
 
-            <p>{data.description}</p>
+            <p>{homeData.description}</p>
             {/* <nav>
                 <ul>
                     {data.map((item) => (
