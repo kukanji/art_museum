@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios';
 import './App.css'
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import { NavBar } from './components/NavBar';
 import { Top } from './pages/Top'
 import { Home } from './pages/Home'
 
@@ -24,14 +25,11 @@ function App() {
     <>
       <h1>ArtMuseum</h1>
       <BrowserRouter>
-        <div>
-          <Link to="/">Top</Link>
-          <Link to="/home">Home</Link>
           <Routes>
-            <Route path="/" element={<Top />} />
-            <Route path="/home" element={<Home />} />
+            <Route path="/NavBar" element={<NavBar />} />
+              <Route index element={<Top />} />
+              <Route path="/home" element={<Home />} />
           </Routes>
-        </div>
       </BrowserRouter>
       <ul>
         {data.map((item) => (

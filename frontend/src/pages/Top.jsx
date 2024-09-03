@@ -1,7 +1,7 @@
 export const Top = () => {
     return (
         <div>
-        <h1>TopPage</h1>
+        <h1>TopPageを表示しています。</h1>
         </div>
     );
 };
