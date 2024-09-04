@@ -5,6 +5,7 @@ import axios from 'axios';
 
 export const Home = () => {
     const params = useParams();
+    const artistId = params.artist_id;
     // console.log(`params_id:${params.artist_id}`);
     const [homeData, setHomeData] = useState([]);
     const [galleryData, setGalleryData] = useState([]);
@@ -13,7 +14,7 @@ export const Home = () => {
       try {
         // const response = await axios.get(`${import.meta.env.VITE_API_URL}/home/`);
         // console.log(`artist_id:${params.artist_id}`);
-        const homeResponse = await axios.get(`${import.meta.env.VITE_API_URL}/home/${params.artist_id}/`);
+        const homeResponse = await axios.get(`${import.meta.env.VITE_API_URL}/home/${artistId}/`);
         const galleryResponse = await axios.get(`${import.meta.env.VITE_API_URL}/gallery/`);
         // console.log(`homeResponse:${homeResponse.data}`);
         console.log(homeResponse.data);
