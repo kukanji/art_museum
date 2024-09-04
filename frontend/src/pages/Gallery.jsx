@@ -8,7 +8,8 @@ export const Gallery = () => {
     const [searchParams] = useSearchParams(); //書き換え
     const galleryId = params.gallery_id;
     const artistId = searchParams.get("artist_id"); //書き換え
-    console.log(`artistId:${artistId}`);
+    // console.log(`artistId:${artistId}`);
+    console.log(`galleryId:${galleryId}`);
     const [galleryData, setGalleryData] = useState([]);
     const [artData, setArtData] = useState([]);
 
@@ -22,8 +23,14 @@ export const Gallery = () => {
               artist_id : artistId
             }
           });
+        // const allArtsOfOneGalleryResponse = await axios.get(`${import.meta.env.VITE_API_URL}/art/`, {
+        //     params: {
+        //       gallery_id : galleryId
+        //     }
+        //   });
         console.log(oneGalleryResponse.data);
         console.log(multipleGalleriesResponse.data);
+        // console.log(allArtsOfOneGalleryResponse.data);
         setGalleryData(oneGalleryResponse.data);
         setArtData(multipleGalleriesResponse.data);
         } catch (error) {
