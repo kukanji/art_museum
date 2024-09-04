@@ -15,7 +15,11 @@ export const Home = () => {
         // const response = await axios.get(`${import.meta.env.VITE_API_URL}/home/`);
         // console.log(`artist_id:${params.artist_id}`);
         const homeResponse = await axios.get(`${import.meta.env.VITE_API_URL}/home/${artistId}/`);
-        const galleryResponse = await axios.get(`${import.meta.env.VITE_API_URL}/gallery/`);
+        const galleryResponse = await axios.get(`${import.meta.env.VITE_API_URL}/gallery/`, {
+            params: {
+              artist_id : artistId
+            }
+          });
         // console.log(`homeResponse:${homeResponse.data}`);
         console.log(homeResponse.data);
         console.log(galleryResponse.data);
