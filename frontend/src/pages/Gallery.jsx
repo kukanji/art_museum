@@ -37,6 +37,11 @@ export const Gallery = () => {
         Gallery.jsxのページを表示しています。
         <p>galleryId:{galleryId}</p>
         <p>artistId:{artistId}</p>
+        <ul>
+            {artData.map((item) => (
+            <li key={item.id}>{item.title}</li>
+            ))}
+        </ul>
         </div>
     );
 };
