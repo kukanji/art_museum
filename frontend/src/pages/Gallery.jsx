@@ -5,6 +5,10 @@ import { useState, useEffect } from 'react'
 export const Gallery = () => {
     const params = useParams();
     const [searchParams] = useSearchParams(); //書き換え
+    const galleryId = params.gallery_id;
+    const galleryTitle = searchParams.get("gallery_title");
+    console.log(galleryId);
+    console.log(galleryTitle);
     const [galleryData, setGalleryData] = useState([]);
     const [artData, setArtData] = useState([]);
     // useEffect(() => {
@@ -23,8 +27,8 @@ export const Gallery = () => {
     return (
         <div>
         Gallery.jsxのページを表示しています。
-        <p>artist_id:{params.artist_id}</p>
-        <p>gallery_id:{searchParams.get("gallery_id")}</p>
+        <p>galleryId:{galleryId}</p>
+        <p>galleryTitle:{galleryTitle}</p>
         </div>
     );
 };

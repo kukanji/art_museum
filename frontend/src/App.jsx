@@ -30,7 +30,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Top />} />
             <Route path="/home/:artist_id" element={<Home />} />
-            <Route path="/gallery/:artist_id" element={<Gallery />} />
+            <Route path="/gallery/:gallery_id" element={<Gallery />} />
           </Routes>
       </BrowserRouter>
       {/* <ul>

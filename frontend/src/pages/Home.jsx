@@ -5,7 +5,7 @@ import axios from 'axios';
 
 export const Home = () => {
     const params = useParams();
-    console.log(params);
+    // console.log(`params_id:${params.artist_id}`);
     const [homeData, setHomeData] = useState([]);
     const [galleryData, setGalleryData] = useState([]);
     useEffect(() => {
@@ -35,9 +35,8 @@ export const Home = () => {
                     {galleryData.map((item) => (
                         <div key={item.id}>
                             <li>
-                                <p>{item.title}</p>
                                 {/* <Link to={`/gallery/${params.artist_id}`}>{item.title}</Link> */}
-                                <Link to={{ pathname: `/gallery/${params.artist_id}`, search: `?gallery_id=${item.id}`}}>{item.title}</Link>
+                                <Link to={{ pathname: `/gallery/${item.id}`, search: `?gallery_title=${item.title}`}}>{item.title}</Link>
                                 {/* <Link to={{ pathname: `/gallery/${artist_id}`, search: ?title=title}}>{item.title}</Link> */}
                             </li>
                             
