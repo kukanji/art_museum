@@ -37,7 +37,7 @@ export const Home = () => {
                         <div key={item.id}>
                             <li>
                                 {/* <Link to={`/gallery/${params.artist_id}`}>{item.title}</Link> */}
-                                <Link to={{ pathname: `/gallery/${item.id}`, search: `?gallery_title=${item.title}`}}>{item.title}</Link>
+                                <Link to={{ pathname: `/gallery/${item.id}`, search: `?artist_id=${artistId}`}}>{item.title}</Link>
                                 {/* <Link to={{ pathname: `/gallery/${artist_id}`, search: ?title=title}}>{item.title}</Link> */}
                             </li>
                             
