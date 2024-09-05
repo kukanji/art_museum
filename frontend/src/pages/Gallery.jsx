@@ -12,6 +12,7 @@ export const Gallery = () => {
     console.log(`galleryId:${galleryId}`);
     const [galleryData, setGalleryData] = useState([]);
     const [artData, setArtData] = useState([]);
+    const [allArtsOfOneGalleryDatas, setAllArtsOfOneGalleryDatas] = useState([]);
 
     useEffect(() => {
     const getData = async () => {
@@ -23,16 +24,17 @@ export const Gallery = () => {
               artist_id : artistId
             }
           });
-        // const allArtsOfOneGalleryResponse = await axios.get(`${import.meta.env.VITE_API_URL}/art/`, {
-        //     params: {
-        //       gallery_id : galleryId
-        //     }
-        //   });
+        const allArtsOfOneGalleryResponse = await axios.get(`${import.meta.env.VITE_API_URL}/art/`, {
+            params: {
+              gallery_id : galleryId
+            }
+          });
         console.log(oneGalleryResponse.data);
         console.log(multipleGalleriesResponse.data);
-        // console.log(allArtsOfOneGalleryResponse.data);
+        console.log(allArtsOfOneGalleryResponse.data);
         setGalleryData(oneGalleryResponse.data);
         setArtData(multipleGalleriesResponse.data);
+        setAllArtsOfOneGalleryDatas(allArtsOfOneGalleryResponse.data);
         } catch (error) {
         console.error(error);
         }
