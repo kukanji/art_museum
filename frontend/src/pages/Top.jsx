@@ -7,8 +7,8 @@ export const Top = () => {
     useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/artgallery/top/');
-        console.log(response.data);
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/top/`);
+        // console.log(response.data);
         setData(response.data);
       } catch (error) {
         console.error(error);

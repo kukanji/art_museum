@@ -5,6 +5,7 @@ import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import { NavBar } from './components/NavBar';
 import { Top } from './pages/Top'
 import { Home } from './pages/Home'
+import { Gallery } from './pages/Gallery';
 
 function App() {
   // const [data, setData] = useState([]);
@@ -29,6 +30,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Top />} />
             <Route path="/home/:artist_id" element={<Home />} />
+            <Route path="/gallery/:gallery_id" element={<Gallery />} />
           </Routes>
       </BrowserRouter>
       {/* <ul>
