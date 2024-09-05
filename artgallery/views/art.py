@@ -10,5 +10,5 @@ class ArtViewSet(viewsets.ModelViewSet):
         queryset = Art.objects.all()
         gallery_id = self.request.query_params.get('gallery_id', None)
         if gallery_id is not None:
-            queryset = queryset.filter(gallery_id=gallery_id)
+            queryset = queryset.filter(gallery__id=gallery_id)
         return queryset
