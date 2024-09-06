@@ -33,26 +33,34 @@ export const Home = () => {
     }, []);
 
     return (
-        <div className="whole-screen">
-            Home.jsxのページを表示しています。
-            <div className="art-frame">
+      <>
+        <div className="home-container">
+          <div className="header-area">
+              Home.jsxのページを表示しています。
+          </div>
+          <div className="art-area">
               <img src={home.art} alt="artist_image" style={{ width:'50%' }}/>
-            </div>
-            <nav>
-                <ul>
-                    {galleries.map((item) => (
-                        <div key={item.id}>
-                            <li className="list-row">
-                                {/* <Link to={`/gallery/${params.artist_id}`}>{item.title}</Link> */}
-                                <Link to={{ pathname: `/gallery/${item.id}`, search: `?artist_id=${artistId}`}}>{item.title}</Link>
-                                {/* <Link to={{ pathname: `/gallery/${artist_id}`, search: ?title=title}}>{item.title}</Link> */}
-                            </li>
-                            
-                        </div>
-                    ))}
-                    
-                </ul>
-            </nav>
+          </div>
+          <div className="other-page-link-area">
+              <nav>
+                  <ul>
+                      {galleries.map((item) => (
+                          <div key={item.id}>
+                              <li className="list-row">
+                                  {/* <Link to={`/gallery/${params.artist_id}`}>{item.title}</Link> */}
+                                  <Link to={{ pathname: `/gallery/${item.id}`, search: `?artist_id=${artistId}`}}>{item.title}</Link>
+                                  {/* <Link to={{ pathname: `/gallery/${artist_id}`, search: ?title=title}}>{item.title}</Link> */}
+                              </li>
+                              
+                          </div>
+                      ))}
+                  </ul>
+              </nav>
+          </div>
+          <div className="footer-area">
+            
+          </div>
         </div>
+      </>
     );
 };

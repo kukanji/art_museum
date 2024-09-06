@@ -53,6 +53,7 @@ a:hover{
   text-align: center;
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 
 /* .top-screen li {
