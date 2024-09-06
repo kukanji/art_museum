@@ -34,14 +34,15 @@ export const Home = () => {
 
     return (
       <>
-        <div className="home-container">
+        <div className="container">
           <div className="header-area">
-              Home.jsxのページを表示しています。
+              <h2>HOME PAGE</h2>
+              <p>{home.description}</p>
           </div>
           <div className="art-area">
-              <img src={home.art} alt="artist_image" style={{ width:'50%' }}/>
+              <img src={home.art} alt="artist_image"/>
           </div>
-          <div className="other-page-link-area">
+          <div className="sidebar-area">
               <nav>
                   <ul>
                       {galleries.map((item) => (
@@ -51,14 +52,15 @@ export const Home = () => {
                                   <Link to={{ pathname: `/gallery/${item.id}`, search: `?artist_id=${artistId}`}}>{item.title}</Link>
                                   {/* <Link to={{ pathname: `/gallery/${artist_id}`, search: ?title=title}}>{item.title}</Link> */}
                               </li>
-                              
                           </div>
                       ))}
                   </ul>
               </nav>
           </div>
           <div className="footer-area">
-            
+            <a href={home.url} target="_blank" rel="noreferrer">instagramのURL</a>
+            <a href={home.twitter} target="_blank" rel="noreferrer">twitterのURL</a>
+            <p>© 2021 ArtMuseum</p>                      
           </div>
         </div>
       </>
