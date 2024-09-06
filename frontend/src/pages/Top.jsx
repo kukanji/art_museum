@@ -22,7 +22,8 @@ export const Top = () => {
             <div className="top-screen">
             <nav>
                 <ul>
-                    <p>ホームページ</p>
+                    <p>ArtMuseumへようこそ！</p>
+                    <p>以下のリンクからアーティストのホームページに行けるよ</p>
                         {elements.map((item) => (
                             <div key={item.id}>
                                 <li>
