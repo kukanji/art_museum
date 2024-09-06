@@ -3,9 +3,8 @@ import { Outlet, Link } from "react-router-dom";
 export const NavBar = () => {
   return (
     <>
-      <div className="nav-bar">
       <nav>
-        <ul>
+        <ul className="menu">
           <li>
             <Link to="/">display top page</Link>
           </li>
@@ -17,7 +16,6 @@ export const NavBar = () => {
           </li>
         </ul>
       </nav>
-      </div>
       <Outlet />
     </>
   )

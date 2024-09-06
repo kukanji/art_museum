@@ -1,10 +1,4 @@
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  text-align: center;
   background-color: rgb(32, 32, 33);
   color: rgb(204, 198, 198);
 }
@@ -19,11 +13,14 @@ a:hover {
   color: hsl(200, 95%, 76%);
 }
 
-.nav-bar {
+.menu {
+  background-color: rgb(220, 255, 255);
   display: flex;
-  /* justify-content: space-between; */
-  align-items: center;
-  /* padding: 1rem 2rem;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  list-style: none;
+}
+
+.menu li {
+  text-align: center;
+  padding: 1rem;
+  flex: 1;
 }
