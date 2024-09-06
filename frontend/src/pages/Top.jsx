@@ -19,14 +19,14 @@ export const Top = () => {
 
     return (
         <>
-            <div className="top-screen">
+            <div className="whole-screen">
             <nav>
                 <ul>
                     <p>ArtMuseumへようこそ！</p>
                     <p>以下のリンクからアーティストのホームページに行けるよ</p>
                         {elements.map((item) => (
                             <div key={item.id}>
-                                <li>
+                                <li className="list-row">
                                     <Link to={`/home/${item.id}`}>{item.username}</Link>
                                 </li>
                                 

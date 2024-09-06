@@ -48,14 +48,25 @@ a:hover{
   flex: 1;
 }
 
-.top-screen {
+.whole-screen {
   padding: 1rem;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
-.top-screen li {
-  /* list-style: square; */
+/* .top-screen li {
   list-style: url('/media/frontend/index_pointing_right.svg');
   display: flex;
   justify-content: center;
-} 
+}  */
+
+.list-row {
+  display: flex;
+  justify-content: center;
+}
+
+.art-frame {
+  display: flex;
+  justify-content: center;
+}
