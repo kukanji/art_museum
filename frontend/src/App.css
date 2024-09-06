@@ -23,13 +23,15 @@ a:hover {
   /* background: rgb(0,0,0);
   background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,79,163,1) 100%); */
   background: rgb(0,0,0);
-background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgb(1, 43, 99) 100%);
-/* background: rgb(0,0,0);
-background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgb(14, 0, 79) 100%); */
-/* background: rgb(2,2,2);
-background: radial-gradient(circle, rgba(2,2,2,1) 0%, rgba(0,9,106,1) 100%); */
+  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgb(1, 43, 99) 100%);
+  /* background: rgb(0,0,0);
+  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgb(14, 0, 79) 100%); */
+  /* background: rgb(2,2,2);
+  background: radial-gradient(circle, rgba(2,2,2,1) 0%, rgba(0,9,106,1) 100%); */
   display: flex;
   list-style: none;
+  box-shadow: 0px 0px 60px 10px #06007c;
+  border-radius: 15px;
   /* padding: 0.3rem; */
 }
 
