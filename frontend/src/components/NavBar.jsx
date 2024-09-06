@@ -3,18 +3,21 @@ import { Outlet, Link } from "react-router-dom";
 export const NavBar = () => {
   return (
     <>
+      <div className="nav-bar">
       <nav>
         <ul>
           <li>
-            <Link to="/">Link to Top</Link>
+            <Link to="/">display top page</Link>
           </li>
           <li>
-            {/* 以下のHomeへのLinkは使う必要性がないかもしれない。 */}
-            <Link to="/home">Link to Home</Link>
+            <Link to="/art">display all arts</Link>
+          </li>
+          <li>
+            <Link to="/login">login</Link>
           </li>
         </ul>
       </nav>
-
+      </div>
       <Outlet />
     </>
   )

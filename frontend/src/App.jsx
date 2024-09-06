@@ -24,7 +24,6 @@ function App() {
 
   return (
     <>
-      App.jsxのページを表示しています
       <BrowserRouter>
         <NavBar />
           <Routes>
