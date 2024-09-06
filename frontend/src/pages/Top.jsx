@@ -20,17 +20,17 @@ export const Top = () => {
     return (
         <>
             <div className="top-screen">
-            <p>ホームページ</p>
             <nav>
                 <ul>
-                    {elements.map((item) => (
-                        <div key={item.id} className="list-row">
-                            <li>
-                                <Link to={`/home/${item.id}`}>{item.username}</Link>
-                            </li>
-                            
-                        </div>
-                    ))}
+                    <p>ホームページ</p>
+                        {elements.map((item) => (
+                            <div key={item.id}>
+                                <li>
+                                    <Link to={`/home/${item.id}`}>{item.username}</Link>
+                                </li>
+                                
+                            </div>
+                        ))}
                 </ul>
             </nav>
             </div>
