@@ -11,6 +11,10 @@ export const NavBar = () => {
           <li>
             <Link to="/art">display all arts</Link>
           </li>
+          {/* <li>
+            <input type="text" placeholder="search"/>
+            <button>検索</button>
+          </li> */}
           <li>
             <Link to="/login">login</Link>
           </li>

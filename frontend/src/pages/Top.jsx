@@ -19,22 +19,20 @@ export const Top = () => {
 
     return (
         <>
-            <div>
-            TopPageを表示しています
+            <div className="top-screen">
+            <p>ホームページ</p>
             <nav>
                 <ul>
                     {elements.map((item) => (
-                        <div key={item.id}>
+                        <div key={item.id} className="list-row">
                             <li>
-                                <Link to={`/home/${item.id}`}>link to {item.username} home</Link>
+                                <Link to={`/home/${item.id}`}>{item.username}</Link>
                             </li>
                             
                         </div>
                     ))}
-                    
                 </ul>
             </nav>
-            あいうえおかきくけこ
             </div>
         </> 
     );
