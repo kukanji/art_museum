@@ -3,18 +3,18 @@ import { useState, useEffect } from 'react'
 import axios from 'axios';
 
 export const Top = () => {
-    const [data, setData] = useState([]);
+    const [elements, setElements] = useState([]);
     useEffect(() => {
-    const getData = async () => {
+    const fetchElements = async () => {
       try {
         const response = await axios.get(`${import.meta.env.VITE_API_URL}/top/`);
-        // console.log(response.data);
-        setData(response.data);
+        console.log(response.data);
+        setElements(response.data);
       } catch (error) {
         console.error(error);
       }
     };
-    getData();
+    fetchElements();
     }, []);
 
     return (
@@ -23,7 +23,7 @@ export const Top = () => {
             TopPageを表示しています
             <nav>
                 <ul>
-                    {data.map((item) => (
+                    {elements.map((item) => (
                         <div key={item.id}>
                             <li>
                                 <Link to={`/home/${item.id}`}>link to {item.username} home</Link>
