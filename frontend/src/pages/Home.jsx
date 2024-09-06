@@ -7,39 +7,42 @@ export const Home = () => {
     const params = useParams();
     const artistId = params.artist_id;
     // console.log(`params_id:${params.artist_id}`);
-    const [homeData, setHomeData] = useState([]);
-    const [galleryData, setGalleryData] = useState([]);
+    const [home, setHome] = useState([]);
+    const [galleries, setGalleries] = useState([]);
     useEffect(() => {
-    const getData = async () => {
+    const fetchElements = async () => {
       try {
         // const response = await axios.get(`${import.meta.env.VITE_API_URL}/home/`);
         // console.log(`artist_id:${params.artist_id}`);
-        const homeResponse = await axios.get(`${import.meta.env.VITE_API_URL}/home/${artistId}/`);
-        const galleryResponse = await axios.get(`${import.meta.env.VITE_API_URL}/gallery/`, {
+        const singleArtistHomeResponse = await axios.get(`${import.meta.env.VITE_API_URL}/home/${artistId}/`);
+        const allGalleriesOfOneArtistResponse = await axios.get(`${import.meta.env.VITE_API_URL}/gallery/`, {
             params: {
               artist_id : artistId
             }
           });
         // console.log(`homeResponse:${homeResponse.data}`);
-        console.log(homeResponse.data);
-        console.log(galleryResponse.data);
-        setHomeData(homeResponse.data);
-        setGalleryData(galleryResponse.data);
+        console.log(singleArtistHomeResponse.data);
+        console.log(allGalleriesOfOneArtistResponse.data);
+        setHome(singleArtistHomeResponse.data);
+        setGalleries(allGalleriesOfOneArtistResponse.data);
       } catch (error) {
         console.error(error);
       }
     };
-    getData();
+    fetchElements();
     }, []);
 
     return (
-        <div>
+        <div className="whole-screen">
             Home.jsxのページを表示しています。
+            <div className="art-frame">
+              <img src={home.art} alt="artist_image" style={{ width:'50%' }}/>
+            </div>
             <nav>
                 <ul>
-                    {galleryData.map((item) => (
+                    {galleries.map((item) => (
                         <div key={item.id}>
-                            <li>
+                            <li className="list-row">
                                 {/* <Link to={`/gallery/${params.artist_id}`}>{item.title}</Link> */}
                                 <Link to={{ pathname: `/gallery/${item.id}`, search: `?artist_id=${artistId}`}}>{item.title}</Link>
                                 {/* <Link to={{ pathname: `/gallery/${artist_id}`, search: ?title=title}}>{item.title}</Link> */}
