@@ -57,10 +57,10 @@ export const Home = () => {
                   </ul>
               </nav>
           </div>
-          <div className="footer-area">
+          <div className="footer-area"> 
             <a href={home.url} target="_blank" rel="noreferrer">instagramを見る</a>
             <a href={home.twitter} target="_blank" rel="noreferrer">twitterを見る</a>
-            <p>© 2021 ArtMuseum</p>                      
+            <p>© 2024 ArtMuseum</p>                      
           </div>
         </div>
       </>

@@ -46,14 +46,22 @@ export const Gallery = () => {
       <>
         <div className="container">
           <div className="header-area">
-              <h2>HOME PAGE</h2>
+              <h2>{SignleGallery.title}</h2>
               <p>{SignleGallery.description}</p>
           </div>
-          <div className="gallery-art-area">
-              {/* <img src={AllArts.art} alt="artist_image"/> */}
+          <div className="gallery-art-container">
               {AllArts.map((artItem) => (
-                  <div key={artItem.id}>
-                      <img src={artItem.art} alt="artist_image"/>
+                  <div className="art-container" key={artItem.id}>
+                    <div className="art-header">
+                      <p>{artItem.title}</p>
+                    </div>
+                    <div className="art-body">
+                        <img src={artItem.art} alt="artist_image"/>
+                    </div>
+                    <div className="art-footer">
+                      <p>{artItem.description}</p>
+                      {/* <p>{artItem.like_sum}</p> */}
+                    </div>
                   </div>
               ))}
           </div>
@@ -61,13 +69,11 @@ export const Gallery = () => {
               <nav>
                   <ul>
                       {MultipleGalleries.map((galleryitem) => (
-                          <div key={galleryitem.id}>
-                              <li className="list-row">
-                                  {/* <Link to={`/gallery/${params.artist_id}`}>{item.title}</Link> */}
-                                  <Link to={{ pathname: `/gallery/${galleryitem.id}`, search: `?artist_id=${artistId}`}}>{galleryitem.title}</Link>
-                                  {/* <Link to={{ pathname: `/gallery/${artist_id}`, search: ?title=title}}>{item.title}</Link> */}
-                              </li>
-                          </div>
+                          <li className="list-row" key={galleryitem.id}>
+                              {/* <Link to={`/gallery/${params.artist_id}`}>{item.title}</Link> */}
+                              <Link to={{ pathname: `/gallery/${galleryitem.id}`, search: `?artist_id=${artistId}`}}>{galleryitem.title}</Link>
+                              {/* <Link to={{ pathname: `/gallery/${artist_id}`, search: ?title=title}}>{item.title}</Link> */}
+                          </li>
                       ))}
                   </ul>
               </nav>
@@ -75,7 +81,7 @@ export const Gallery = () => {
           <div className="footer-area">
             {/* <a href={home.url} target="_blank" rel="noreferrer">instagramを見る</a>
             <a href={home.twitter} target="_blank" rel="noreferrer">twitterを見る</a> */}
-            <p>© 2021 ArtMuseum</p>                      
+            <p>© 2024 ArtMuseum</p>                      
           </div>
         </div>
       </>
