@@ -104,6 +104,11 @@ a:hover{
   grid-column: 2 / 3;
   grid-row: 2 / 3;
   margin: 1rem;
+  display:grid;
+  /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); */
+  grid-template-columns: repeat(2, 1fr); /* 2列に設定 */
+  /* grid-template-columns: repeat(auto-fill, max(300px)); */
+  grid-gap: 1rem;
 }
 
 .gallery-art-area img {
