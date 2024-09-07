@@ -70,7 +70,7 @@ a:hover{
 
 .container {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 3fr 10fr;
   grid-template-rows: auto auto auto;
   /* grid-template-columns: 10rem 20rem;
   grid-template-rows: 10rem 3rem 10rem; */
@@ -95,19 +95,67 @@ a:hover{
   object-fit: scale-down;
 }
 
-.gallery-art-area {
+.gallery-art-container {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
-  margin: 1rem;
+  margin: 1.0rem 0.3rem 1.0rem 0.8rem;
   display:grid;
+  /* display: flex;
+  flex-wrap: wrap; */
   /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); */
   grid-template-columns: repeat(2, 1fr);
   /* grid-template-columns: repeat(auto-fill, max(300px)); */
-  grid-gap: 1rem;
+  grid-gap: 1.5rem;
+  /* grid-template-rows: 100px 200px 100px; */
 }
 
-.gallery-art-area img {
+/* .gallery-art-container img {
   max-width: 100%;
+} */
+
+.art-container {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  max-height: 600px;
+  /* border-top: 2px solid rgb(3, 54, 112); */
+  /* grid-template-rows: 1fr 3fr 1fr; */
+  /* background-color: chartreuse; */
+  /* background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgb(0, 36, 83) 100%); */
+  box-shadow: 0px 0px 30px 0px #252f9d;
+  /* background-color: #020223;  */
+  border-radius: 15px;
+  /* padding-inline: 1.0rem; */
+  padding: 0.5rem 1.0rem;
+  /* background: rgb(14,17,36); */
+/* background: radial-gradient(circle, rgb(6, 7, 34) 0%, rgb(1, 4, 44) 100%); */
+}
+
+.art-header {
+  grid-row: 1 / 2;
+  padding:0 1.0rem;
+  /* background-color: blueviolet; */
+  
+}
+
+.art-body {
+  /* max-width: 100px;
+  max-height: 100px; */
+  max-height: 400px;
+  grid-row: 2 / 3;
+  margin: 0 0.5rem;
+  /* background-color: red; */
+}
+
+.art-body img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.art-footer {
+  grid-row: 3 / 4;
+  /* background-color: yellow; */
+  /* border-bottom: 2px solid rgb(49, 9, 108); */
+  padding:0 1.0rem;
 }
 
 .sidebar-area {
@@ -123,6 +171,7 @@ a:hover{
   /* border-left: 2px solid rgb(34, 53, 115); */
   background: rgb(2,0,36);
   background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgb(0, 36, 83) 100%);
+  /* background: linear-gradient(90deg, rgb(0, 36, 83) 0%, rgba(0,0,0,1) 100%); */
   box-shadow: 0px 0px 60px 3px #070187;
   border-radius: 15px;
 }
