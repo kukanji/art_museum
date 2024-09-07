@@ -4,12 +4,10 @@ import axios from 'axios';
 
 export const Gallery = () => {
     const params = useParams();
-    const [searchParams] = useSearchParams(); //書き換え
+    const [searchParams] = useSearchParams();
     const location = useLocation();
     const galleryId = params.gallery_id;
-    const artistId = searchParams.get("artist_id"); //書き換え
-    // console.log(`artistId:${artistId}`);
-    // console.log(`galleryId:${galleryId}`);
+    const artistId = searchParams.get("artist_id");
     const [signleGallery, setSignleGallery] = useState([]);
     const [multipleGalleries, setMultipleGalleries] = useState([]);
     const [allArts, setAllArts] = useState([]);
@@ -18,7 +16,6 @@ export const Gallery = () => {
     const fetchElements = async () => {
         try {
         const singleGalleryResponse = await axios.get(`${import.meta.env.VITE_API_URL}/gallery/${galleryId}/`);
-        // const allGalleryResponse = await axios.get(`${import.meta.env.VITE_API_URL}/gallery?artist_id=${artistId}/`);
         const multipleGalleriesResponse = await axios.get(`${import.meta.env.VITE_API_URL}/gallery/`, {
             params: {
               artist_id : artistId
@@ -29,9 +26,6 @@ export const Gallery = () => {
               gallery_id : galleryId
             }
           });
-        console.log(singleGalleryResponse.data);
-        console.log(multipleGalleriesResponse.data);
-        console.log(allArtsOfSingleGalleryResponse.data);
         setSignleGallery(singleGalleryResponse.data);
         setMultipleGalleries(multipleGalleriesResponse.data);
         setAllArts(allArtsOfSingleGalleryResponse.data);
@@ -40,7 +34,6 @@ export const Gallery = () => {
         }
     };
     fetchElements();
-    // }, [galleryId]);
     }, [location]);
     return (
       <>
@@ -70,17 +63,13 @@ export const Gallery = () => {
                   <ul>
                       {multipleGalleries.map((galleryitem) => (
                           <li className="list-row" key={galleryitem.id}>
-                              {/* <Link to={`/gallery/${params.artist_id}`}>{item.title}</Link> */}
                               <Link to={{ pathname: `/gallery/${galleryitem.id}`, search: `?artist_id=${artistId}`}}>{galleryitem.title}</Link>
-                              {/* <Link to={{ pathname: `/gallery/${artist_id}`, search: ?title=title}}>{item.title}</Link> */}
                           </li>
                       ))}
                   </ul>
               </nav>
           </div>
           <div className="footer-area">
-            {/* <a href={home.url} target="_blank" rel="noreferrer">instagramを見る</a>
-            <a href={home.twitter} target="_blank" rel="noreferrer">twitterを見る</a> */}
             <p>© 2024 ArtMuseum</p>                      
           </div>
         </div>

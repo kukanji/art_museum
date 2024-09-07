@@ -22,8 +22,8 @@ export const Top = () => {
             <div className="whole-screen">
             <nav>
                 <ul>
-                    <p>ArtMuseumへようこそ！</p>
-                    <p>以下のリンクからアーティストのホームページに行けるよ</p>
+                    <h1>welcome to ArtMuseum</h1>
+                    <p>下のリンクからアーティストのホームページに行けるよ</p>
                         {elements.map((item) => (
                             <div key={item.id}>
                                 <li className="list-row">

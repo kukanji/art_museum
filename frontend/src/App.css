@@ -66,6 +66,7 @@ a:hover{
   grid-row: 1 / 2;
   text-align: center;
   margin: 1.5rem 1.0rem 1.0rem 1.0rem;
+  white-space: pre-wrap;
 }
 
 .home-art-area {
@@ -98,7 +99,7 @@ a:hover{
 .art-container {
   display: grid;
   grid-template-rows: auto auto auto;
-  max-height: 600px;
+  white-space: pre-wrap;
   /* border-top: 2px solid rgb(3, 54, 112); */
   /* grid-template-rows: 1fr 3fr 1fr; */
   /* background-color: chartreuse; */
@@ -120,7 +121,7 @@ a:hover{
 .art-body {
   /* max-width: 100px;
   max-height: 100px; */
-  max-height: 400px;
+  max-height: 500px;
   grid-row: 2 / 3;
   margin: 0 0.5rem;
 }
@@ -166,9 +167,3 @@ a:hover{
   text-align: center;
   margin: 1.0rem;
 }
-
-/* .permanent-marker-regular {
-  font-family: "Permanent Marker", cursive;
-  font-weight: 400;
-  font-style: normal;
-} */
