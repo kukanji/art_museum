@@ -10,9 +10,9 @@ export const Gallery = () => {
     const artistId = searchParams.get("artist_id"); //書き換え
     // console.log(`artistId:${artistId}`);
     // console.log(`galleryId:${galleryId}`);
-    const [SignleGallery, setSignleGallery] = useState([]);
-    const [MultipleGalleries, setMultipleGalleries] = useState([]);
-    const [AllArts, setAllArts] = useState([]);
+    const [signleGallery, setSignleGallery] = useState([]);
+    const [multipleGalleries, setMultipleGalleries] = useState([]);
+    const [allArts, setAllArts] = useState([]);
 
     useEffect(() => {
     const fetchElements = async () => {
@@ -46,11 +46,11 @@ export const Gallery = () => {
       <>
         <div className="container">
           <div className="header-area">
-              <h2>{SignleGallery.title}</h2>
-              <p>{SignleGallery.description}</p>
+              <h2>{signleGallery.title}</h2>
+              <p>{signleGallery.description}</p>
           </div>
           <div className="gallery-art-container">
-              {AllArts.map((artItem) => (
+              {allArts.map((artItem) => (
                   <div className="art-container" key={artItem.id}>
                     <div className="art-header">
                       <p>{artItem.title}</p>
@@ -68,7 +68,7 @@ export const Gallery = () => {
           <div className="sidebar-area">
               <nav>
                   <ul>
-                      {MultipleGalleries.map((galleryitem) => (
+                      {multipleGalleries.map((galleryitem) => (
                           <li className="list-row" key={galleryitem.id}>
                               {/* <Link to={`/gallery/${params.artist_id}`}>{item.title}</Link> */}
                               <Link to={{ pathname: `/gallery/${galleryitem.id}`, search: `?artist_id=${artistId}`}}>{galleryitem.title}</Link>
