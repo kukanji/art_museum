@@ -58,11 +58,11 @@ export const Gallery = () => {
           <div className="sidebar-area">
               <nav>
                   <ul>
-                      {MultipleGalleries.map((item) => (
-                          <div key={item.id}>
+                      {MultipleGalleries.map((galleryitem) => (
+                          <div key={galleryitem.id}>
                               <li className="list-row">
                                   {/* <Link to={`/gallery/${params.artist_id}`}>{item.title}</Link> */}
-                                  <Link to={{ pathname: `/gallery/${item.id}`, search: `?artist_id=${artistId}`}}>{item.title}</Link>
+                                  <Link to={{ pathname: `/gallery/${galleryitem.id}`, search: `?artist_id=${artistId}`}}>{galleryitem.title}</Link>
                                   {/* <Link to={{ pathname: `/gallery/${artist_id}`, search: ?title=title}}>{item.title}</Link> */}
                               </li>
                           </div>
