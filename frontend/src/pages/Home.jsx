@@ -39,7 +39,7 @@ export const Home = () => {
               <h2>HOME PAGE</h2>
               <p>{home.description}</p>
           </div>
-          <div className="art-area">
+          <div className="home-art-area">
               <img src={home.art} alt="artist_image"/>
           </div>
           <div className="sidebar-area">

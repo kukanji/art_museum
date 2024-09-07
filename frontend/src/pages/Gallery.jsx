@@ -47,7 +47,7 @@ export const Gallery = () => {
               <h2>HOME PAGE</h2>
               <p>{SignleGallery.description}</p>
           </div>
-          <div className="art-area">
+          <div className="gallery-art-area">
               {/* <img src={AllArts.art} alt="artist_image"/> */}
               {AllArts.map((artItem) => (
                   <div key={artItem.id}>
