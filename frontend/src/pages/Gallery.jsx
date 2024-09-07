@@ -1,10 +1,11 @@
-import { useParams, useSearchParams, Link } from "react-router-dom";
+import { useParams, useSearchParams, Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from 'react'
 import axios from 'axios';
 
 export const Gallery = () => {
     const params = useParams();
     const [searchParams] = useSearchParams(); //書き換え
+    const location = useLocation();
     const galleryId = params.gallery_id;
     const artistId = searchParams.get("artist_id"); //書き換え
     // console.log(`artistId:${artistId}`);
@@ -39,7 +40,8 @@ export const Gallery = () => {
         }
     };
     fetchElements();
-    }, []);
+    // }, [galleryId]);
+    }, [location]);
     return (
       <>
         <div className="container">
