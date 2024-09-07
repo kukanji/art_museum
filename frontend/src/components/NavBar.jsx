@@ -4,17 +4,22 @@ export const NavBar = () => {
   return (
     <>
       <nav>
-        <ul>
+        <ul className="menu">
           <li>
-            <Link to="/">Link to Top</Link>
+            <Link to="/">display top page</Link>
           </li>
           <li>
-            {/* 以下のHomeへのLinkは使う必要性がないかもしれない。 */}
-            <Link to="/home">Link to Home</Link>
+            <Link to="/art">display all arts</Link>
+          </li>
+          {/* <li>
+            <input type="text" placeholder="search"/>
+            <button>検索</button>
+          </li> */}
+          <li>
+            <Link to="/login">login</Link>
           </li>
         </ul>
       </nav>
-
       <Outlet />
     </>
   )
