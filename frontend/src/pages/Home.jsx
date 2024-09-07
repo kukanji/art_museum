@@ -58,8 +58,8 @@ export const Home = () => {
               </nav>
           </div>
           <div className="footer-area">
-            <a href={home.url} target="_blank" rel="noreferrer">instagramのURL</a>
-            <a href={home.twitter} target="_blank" rel="noreferrer">twitterのURL</a>
+            <a href={home.url} target="_blank" rel="noreferrer">instagramを見る</a>
+            <a href={home.twitter} target="_blank" rel="noreferrer">twitterを見る</a>
             <p>© 2021 ArtMuseum</p>                      
           </div>
         </div>
