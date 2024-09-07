@@ -12,10 +12,6 @@ a {
   /* color: rgb(155, 183, 249); */
 }
 
-/* a:hover {
-  color: hsl(200, 95%, 76%);
-} */
-
 a:hover{
   color:hsl(57, 33%, 56%);
   border-bottom:2px solid hsl(57, 33%, 56%);
@@ -57,17 +53,6 @@ a:hover{
   flex-direction: column;
 }
 
-/* .top-screen li {
-  list-style: url('/media/frontend/index_pointing_right.svg');
-  display: flex;
-  justify-content: center;
-}  */
-
-/* .art-frame {
-  display: flex;
-  justify-content: center;
-} */
-
 .container {
   display: grid;
   grid-template-columns: 3fr 10fr;
@@ -87,6 +72,7 @@ a:hover{
   grid-column: 2 / 3;
   grid-row: 2 / 3;
   margin: 1rem;
+  box-shadow: 0px 0px 30px 0px #252f9d;
 }
 
 .home-art-area img {
@@ -109,10 +95,6 @@ a:hover{
   /* grid-template-rows: 100px 200px 100px; */
 }
 
-/* .gallery-art-container img {
-  max-width: 100%;
-} */
-
 .art-container {
   display: grid;
   grid-template-rows: auto auto auto;
@@ -132,9 +114,7 @@ a:hover{
 
 .art-header {
   grid-row: 1 / 2;
-  padding:0 1.0rem;
-  /* background-color: blueviolet; */
-  
+  padding:0 1.0rem; 
 }
 
 .art-body {
@@ -143,7 +123,6 @@ a:hover{
   max-height: 400px;
   grid-row: 2 / 3;
   margin: 0 0.5rem;
-  /* background-color: red; */
 }
 
 .art-body img {
@@ -164,10 +143,6 @@ a:hover{
   margin: 1.0rem 1.0rem 1.0rem 0rem;
   padding-right: 1.8rem;
   padding-top: 1.5rem;
-  /* display: flex;
-  text-align: center;
-  list-style: none; */
-  /* flex-direction: column; */
   /* border-left: 2px solid rgb(34, 53, 115); */
   background: rgb(2,0,36);
   background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgb(0, 36, 83) 100%);
