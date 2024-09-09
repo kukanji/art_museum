@@ -47,7 +47,10 @@ SECRET_KEY = 'django-insecure-jhd*)2t3%vh$-u0ii$(cjz_)+z0iub1_!0j9s+acjcfm@hb==-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'artmuseum.y-kanji.com',
+    'ec2-34-224-66-81.compute-1.amazonaws.com',
+]
 
 
 # Application definition
