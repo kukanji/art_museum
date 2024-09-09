@@ -79,6 +79,8 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:5173',
     'http://localhost:5173',
+    'http://artmuseum.y-kanji.com/',
+    'http://ec2-34-224-66-81.compute-1.amazonaws.com:5173/',
 ]
 
 ROOT_URLCONF = 'artmuseum.urls'
