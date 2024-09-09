@@ -48,6 +48,7 @@ SECRET_KEY = 'django-insecure-jhd*)2t3%vh$-u0ii$(cjz_)+z0iub1_!0j9s+acjcfm@hb==-
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    '127.0.0.1',
     'artmuseum.y-kanji.com',
     'ec2-34-224-66-81.compute-1.amazonaws.com',
 ]
@@ -82,8 +83,8 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:5173',
     'http://localhost:5173',
-    'http://artmuseum.y-kanji.com/',
-    'http://ec2-34-224-66-81.compute-1.amazonaws.com:5173/',
+    'http://artmuseum.y-kanji.com:5173',
+    'http://ec2-34-224-66-81.compute-1.amazonaws.com:5173',
 ]
 
 ROOT_URLCONF = 'artmuseum.urls'
