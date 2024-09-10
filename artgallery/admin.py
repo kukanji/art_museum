@@ -1,8 +1,17 @@
 from django.contrib import admin
 from .models import Home, Gallery, Art, Comment
+from django.utils.safestring import mark_safe
 
 class HomeAdmin(admin.ModelAdmin):
-    list_display = ('artist', 'art', 'description', 'instagram', 'twitter', 'created_at', 'updated_at')
+    list_display = ('artist','thumbnail', 'art', 'description', 'instagram', 'twitter', 'created_at', 'updated_at')
+    readonly_fields = ('thumbnail',)
+
+    def thumbnail(self, obj):
+        if obj.art:
+            return mark_safe(f'<img src="{obj.art.url}" width="100" height="100" />')
+        return "No Image"
+    
+    thumbnail.short_description = 'Thumbnail'
 
 
 class GalleryAdmin(admin.ModelAdmin):
@@ -10,7 +19,15 @@ class GalleryAdmin(admin.ModelAdmin):
 
 
 class ArtAdmin(admin.ModelAdmin):
-    list_display = ('_gallery', 'art', 'title', 'description', 'like_sum', 'created_at', 'updated_at')
+    list_display = ('_gallery','thumbnail', 'art', 'title', 'description', 'like_sum', 'created_at', 'updated_at')
+    readonly_fields = ('thumbnail',)
+
+    def thumbnail(self, obj):
+        if obj.art:
+            return mark_safe(f'<img src="{obj.art.url}" width="100" height="100" />')
+        return "No Image"
+    
+    thumbnail.short_description = 'Thumbnail'
 
     def _gallery(self, obj):
         return ', '.join(single_gallery.title for single_gallery in obj.gallery.all())
