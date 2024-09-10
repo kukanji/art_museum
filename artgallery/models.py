@@ -48,7 +48,7 @@ class Art(models.Model):
         img = Image.open(self.art)
         img = img.convert('RGB')
         output = BytesIO()
-        img.save(output, format='JPEG', quality=70)
+        img.save(output, format='JPEG', quality=30)
         output.seek(0)
         self.art = File(output, self.art.name.split('.')[0] + '.jpg')
         super(Art, self).save(*args, **kwargs)
