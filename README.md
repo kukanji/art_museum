@@ -27,7 +27,7 @@
 | ギャラリー画面 |
 | ---- |
 | ![GalleryPageUpward](/docs/gallery_page_upward.png)![GalleryPageDownward](/docs/gallery_page_downward.png) |
-| 左側のナビゲーションバーには他のギャラリーへのリンクを実装しました。 | あああ。 |
+| 画像とタイトル、概要をそれぞれ一つの枠組みとして画像を横2列に配置しました。左側のナビゲーションバーから他のギャラリーへ移動することが出来ます。 |
 <br />
 
 <!-- | トップ画面 |　ホーム画面 |
