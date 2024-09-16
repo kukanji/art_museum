@@ -44,6 +44,18 @@ services:
     command: bash -c "cd /workspace/frontend && npm install && npm run dev"
     stdin_open: true
     tty: true
+    working_dir: /workspace/frontend
+  web:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./frontend/dist:/usr/share/nginx/html
+      - ./frontend/conf.d:/etc/nginx/conf.d
+    depends_on:
+      - app
+    stdin_open: true
+    tty: true
 
 volumes:
   postgres_data:
