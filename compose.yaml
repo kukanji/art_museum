@@ -51,7 +51,6 @@ services:
       - "80:80"
     volumes:
       - ./frontend/dist:/usr/share/nginx/html
-      - ./frontend/conf.d:/etc/nginx/conf.d
     depends_on:
       - app
     stdin_open: true
