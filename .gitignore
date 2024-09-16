@@ -1,5 +1,4 @@
-.env
-.env_aws
+.env*
 __pycache__/
 *.xlsx
 ・データの関係.txt
