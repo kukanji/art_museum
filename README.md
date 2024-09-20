@@ -2,7 +2,7 @@
 
 ## サービスのURL
 現在、一番上のナビゲーションバーは"display top page"という部分以外はまだ実装できていません。<br />
-http://artmuseum.y-kanji.com/home/3
+http://artmuseum.y-kanji.com
 
 ## 経緯
 このプロダクトはイラストの管理をもっと簡単にしたいという思いから作りました。<br />
