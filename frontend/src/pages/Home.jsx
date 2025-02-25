@@ -11,13 +11,17 @@ export const Home = () => {
     useEffect(() => {
     const fetchElements = async () => {
       try {
-        const singleArtistHomeResponse = await axios.get(`${import.meta.env.VITE_API_URL}/home/${artistId}/`);
+        const singleArtistHomeResponse = await axios.get(`${import.meta.env.VITE_API_URL}/home/`, {
+          params: {
+            artist_id : artistId
+          }
+        });
         const allGalleriesOfOneArtistResponse = await axios.get(`${import.meta.env.VITE_API_URL}/gallery/`, {
             params: {
               artist_id : artistId
             }
           });
-        setHome(singleArtistHomeResponse.data);
+        setHome(singleArtistHomeResponse.data[0]);
         setGalleries(allGalleriesOfOneArtistResponse.data);
       } catch (error) {
         console.error(error);
