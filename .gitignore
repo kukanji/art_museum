@@ -4,3 +4,6 @@ __pycache__/
 ・データの関係.txt
 media/
 user_password.txt
+EC2インスタンスへの入り方.txt
+djangomanual.txt
+.DS_Store
