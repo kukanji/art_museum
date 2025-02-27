@@ -10,5 +10,4 @@ class HomeViewSet(viewsets.ModelViewSet):
         artist_id = self.request.query_params.get('artist_id', None)
         if artist_id:
             return Home.objects.filter(artist_id=artist_id)
-        else:
-            return Home.objects.none()
+        return Home.objects.none()
