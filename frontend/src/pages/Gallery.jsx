@@ -49,7 +49,10 @@ export const Gallery = () => {
                       <p>{artItem.title}</p>
                     </div>
                     <div className="art-body">
-                        <img src={artItem.art} alt="artist_image"/>
+                        <a href={artItem.art}>
+                          <img src={artItem.thumbnail} alt={artItem.title}/>
+                        </a>
+                        {/* <img src={artItem.art} alt="artist_image"/> */}
                     </div>
                     <div className="art-footer">
                       <p>{artItem.description}</p>
