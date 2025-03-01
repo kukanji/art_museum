@@ -87,29 +87,6 @@ class Art(models.Model):
 
     def __str__(self):
         return self.title
-    
-# class Art(models.Model):
-#     gallery = models.ManyToManyField(Gallery)
-#     art = models.ImageField(upload_to='arts/')
-#     thumbnail = models.ImageField(upload_to='arts/thumbnails/', blank=True)
-#     title = models.CharField(max_length=255)
-#     description = models.TextField(null=True, blank=True)
-#     like_sum = models.IntegerField(default=0)
-#     created_at = models.DateTimeField(auto_now_add=True)
-#     updated_at = models.DateTimeField(auto_now=True)
-
-#     def save(self, *args, **kwargs):
-#         img = Image.open(self.art)
-#         img = img.convert('RGB')
-#         output = BytesIO()
-#         img.save(output, format='JPEG', quality=20)
-#         output.seek(0)
-#         self.art = File(output, self.art.name.split('.')[0] + '.jpg')
-#         super(Art, self).save(*args, **kwargs)
-
-#     def __str__(self):
-#         return self.title
-    
 
 class Comment(models.Model):
     art = models.ForeignKey(Art, on_delete=models.CASCADE)
