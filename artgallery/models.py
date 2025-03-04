@@ -26,6 +26,7 @@ class Home(models.Model):
     def __str__(self):
         return self.artist.username
     
+    
 class Gallery(models.Model):
     artist = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
@@ -87,6 +88,7 @@ class Art(models.Model):
 
     def __str__(self):
         return self.title
+    
 
 class Comment(models.Model):
     art = models.ForeignKey(Art, on_delete=models.CASCADE)
