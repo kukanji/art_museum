@@ -5,10 +5,7 @@ export const NavBar = () => {
   return (
     <>
       <AppBar position="static" sx={{ width: '100%', margin: 0 }}>
-        <Container 
-          maxWidth="lg" 
-          disableGutters  // 左右の余白（パディング）を無効化
-        >
+        <Container maxWidth="lg" >
           <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
             <Box>
               <Button variant="text" color="inherit" sx={{ textTransform: 'none' }} component={Link} to="/">
