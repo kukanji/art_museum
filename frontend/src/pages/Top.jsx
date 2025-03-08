@@ -32,7 +32,7 @@ export const Top = () => {
                                     <Typography 
                                         variant="body1"
                                         sx={{
-                                            color: 'primary.main',
+                                            color: '#000000',
                                             '&:hover': {
                                                 color: 'primary.dark',
                                             }
