@@ -2,6 +2,9 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from 'react'
 import axios from 'axios';
+import { Container, Box, Typography, List, ListItem, ListItemText, ListItemButton } from '@mui/material';
+import Grid from '@mui/material/Grid2';
+
 
 export const Home = () => {
     const params = useParams();
@@ -32,7 +35,42 @@ export const Home = () => {
 
     return (
       <>
-        <div className="container">
+        <Box maxWidth="lg" sx={{ mt: 3 }}>
+          <Grid container spacing={2}>
+            <Grid size={12}>
+              <Typography variant="h4">HOME PAGE</Typography>
+              <Typography variant="body1">{home.description}</Typography>
+            </Grid>
+            <Grid size={4}>
+              <Typography variant="h6">GALLERIES</Typography>
+              <List>
+                {galleries.map((item) => (
+                  <ListItem key={item.id} disablePadding>
+                    <ListItemButton 
+                      component={Link} 
+                      to={{ pathname: `/gallery/${item.id}`, search: `?artist_id=${artistId}`}}
+                    >
+                      <ListItemText primary={item.title} />
+                    </ListItemButton>
+                  </ListItem>
+                ))}
+              </List>
+            </Grid>
+            <Grid size={8}>
+              <Box
+                component="img"
+                sx={{
+                  width: '100%',
+                  height: 'auto',
+                  maxWidth: '100%',
+                }}
+                src={home.art}
+                alt="artist_image"
+              />
+            </Grid>
+          </Grid>
+        </Box>
+        {/* <div className="container">
           <div className="header-area">
               <h2>HOME PAGE</h2>
               <p>{home.description}</p>
@@ -58,7 +96,7 @@ export const Home = () => {
             <a href={home.twitter} target="_blank" rel="noreferrer">twitterを見る</a>
             <p>© 2024 ArtMuseum</p>                      
           </div>
-        </div>
+        </div> */}
       </>
     );
 };
