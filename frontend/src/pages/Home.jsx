@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios';
 import { Container, Box, Typography, List, ListItem, ListItemText, ListItemButton } from '@mui/material';
 import Grid from '@mui/material/Grid2';
+import CircleIcon from '@mui/icons-material/Circle';
 
 
 export const Home = () => {
@@ -35,10 +36,12 @@ export const Home = () => {
 
     return (
       <>
-        <Box maxWidth="lg" sx={{ mt: 3 }}>
+        <Container maxWidth="lg" sx={{ mt: 3 }}>
           <Grid container spacing={2}>
             <Grid size={12}>
-              <Typography variant="h4">HOME PAGE</Typography>
+              <Typography variant="h4">
+                <CircleIcon></CircleIcon>ARTIST PAGE
+              </Typography>
               <Typography variant="body1">{home.description}</Typography>
             </Grid>
             <Grid size={4}>
@@ -49,6 +52,11 @@ export const Home = () => {
                     <ListItemButton 
                       component={Link} 
                       to={{ pathname: `/gallery/${item.id}`, search: `?artist_id=${artistId}`}}
+                      sx={{
+                        '&:hover': {
+                          color: 'primary.dark',
+                        }
+                      }}
                     >
                       <ListItemText primary={item.title} />
                     </ListItemButton>
@@ -69,7 +77,7 @@ export const Home = () => {
               />
             </Grid>
           </Grid>
-        </Box>
+        </Container>
         {/* <div className="container">
           <div className="header-area">
               <h2>HOME PAGE</h2>
