@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from 'react'
 import axios from 'axios';
+import { Container, Box, Button, AppBar, Toolbar, Typography } from '@mui/material';
 
 export const Top = () => {
     const [elements, setElements] = useState([]);
@@ -19,22 +20,32 @@ export const Top = () => {
 
     return (
         <>
-            <div className="whole-screen">
-            <nav>
-                <ul>
-                    <h1>welcome to ArtMuseum</h1>
-                    <p>下のリンクからアーティストのホームページに行けるよ</p>
+            <Container>
+                <Box sx={{ mt: 3 }}>
+                    <ul>
                         {elements.map((item) => (
-                            <div key={item.id}>
-                                <li className="list-row">
-                                    <Link to={`/home/${item.id}`}>{item.username}</Link>
-                                </li>
-                                
-                            </div>
+                            <li key={item.id} className="list-row">
+                                <Link 
+                                    to={`/home/${item.id}`}
+                                    style={{ textDecoration: 'none' }}
+                                >
+                                    <Typography 
+                                        variant="body1"
+                                        sx={{
+                                            color: 'primary.main',
+                                            '&:hover': {
+                                                color: 'primary.dark',
+                                            }
+                                        }}
+                                    >
+                                        {item.username}
+                                    </Typography>
+                                </Link>
+                            </li>
                         ))}
-                </ul>
-            </nav>
-            </div>
-        </> 
+                    </ul>
+                </Box>
+            </Container>
+        </>
     );
 };
