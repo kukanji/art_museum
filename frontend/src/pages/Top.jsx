@@ -26,7 +26,7 @@ export const Top = () => {
                     <Typography variant="h4">
                         <SquareIcon sx={{ mr: 0.5  }}></SquareIcon>Welcome to the ArtMuseum
                     </Typography>
-                    <Divider sx={{ borderColor: "black", borderWidth: 1, mb: 2 }} />
+                    <Divider sx={{ borderColor: "black", borderWidth: 1, mb: 2, width: '100%' }} />
                     <Typography variant="body1">下記のリンクからアーティストのページが見れるよ</Typography>
                 </Box>
                 <Box sx={{ mt: 3 }}>
