@@ -57,7 +57,7 @@ export const Home = () => {
                     to={{ pathname: `/gallery/${item.id}`, search: `?artist_id=${artistId}`}}
                     sx={{
                       '&:hover': {
-                        color: 'primary.dark',
+                        color: 'primary.main',
                       }
                     }}
                   >
