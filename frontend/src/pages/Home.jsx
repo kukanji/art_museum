@@ -45,7 +45,7 @@ export const Home = () => {
             <Typography variant="body1">{home.description}</Typography>
           </Grid>
           <Grid size={4}>
-            <Box sx={{ backgroundColor: 'white', p: 2, boxShadow: 3, borderRadius: 2 }}>
+            <Box sx={{ backgroundColor: 'white', p: 2, boxShadow: 1, borderRadius: 4 }}>
               <Typography variant="h5" sx={{ display: 'flex', alignItems: 'center' }}>
                 <SquareIcon sx={{ mr: 0.4, fontSize: '1.2rem' }}></SquareIcon>GALLERIES
               </Typography>
@@ -76,6 +76,7 @@ export const Home = () => {
                 width: '100%',
                 height: 'auto',
                 maxWidth: '100%',
+                borderRadius: 4
               }}
               src={home.art}
               alt="artist_image"
