@@ -44,8 +44,8 @@ export const Home = () => {
             <Typography variant="body1">{home.description}</Typography>
           </Grid>
           <Grid size={4}>
-            <Typography variant="h6" sx={{ display: 'flex', alignItems: 'center' }}>
-              <SquareIcon sx={{ mr: 0.3, fontSize: '1rem' }}></SquareIcon>GALLERIES
+            <Typography variant="h5" sx={{ display: 'flex', alignItems: 'center' }}>
+              <SquareIcon sx={{ mr: 0.4, fontSize: '1.2rem' }}></SquareIcon>GALLERIES
             </Typography>
             <List>
               {galleries.map((item) => (
