@@ -44,46 +44,41 @@ export const Home = () => {
             <Divider sx={{ borderColor: "black", borderWidth: 1, mb: 2 }} />
             <Typography variant="body1">{home.description}</Typography>
           </Grid>
-          <Grid size={12} sx={{ backgroundColor: 'white', p: 2 }}>
-            <Grid container spacing={2}>
-              <Grid size={4}>
-                <Typography variant="h5" sx={{ display: 'flex', alignItems: 'center' }}>
-                  <SquareIcon sx={{ mr: 0.4, fontSize: '1.2rem' }}></SquareIcon>GALLERIES
-                </Typography>
-                <Divider sx={{ borderColor: "black", borderWidth: 1 }} />
-                <List>
-                  {galleries.map((item) => (
-                    <ListItem key={item.id} disablePadding>
-                      <ListItemButton 
-                        component={Link} 
-                        to={{ pathname: `/gallery/${item.id}`, search: `?artist_id=${artistId}`}}
-                        sx={{
-                          '&:hover': {
-                            color: 'primary.dark',
-                          }
-                        }}
-                      >
-                        <ListItemText primary={item.title} />
-                      </ListItemButton>
-                    </ListItem>
-                  ))}
-                </List>
-              </Grid>
-              <Grid size={8}>
-                <Box
-                  component="img"
-                  sx={{
-                    width: '100%',
-                    height: 'auto',
-                    maxWidth: '100%',
-                  }}
-                  src={home.art}
-                  alt="artist_image"
-                />
-              </Grid>
-            </Grid>
+          <Grid size={4}>
+            <Typography variant="h5" sx={{ display: 'flex', alignItems: 'center' }}>
+              <SquareIcon sx={{ mr: 0.4, fontSize: '1.2rem' }}></SquareIcon>GALLERIES
+            </Typography>
+            <Divider sx={{ borderColor: "black", borderWidth: 1 }} />
+            <List>
+              {galleries.map((item) => (
+                <ListItem key={item.id} disablePadding>
+                  <ListItemButton 
+                    component={Link} 
+                    to={{ pathname: `/gallery/${item.id}`, search: `?artist_id=${artistId}`}}
+                    sx={{
+                      '&:hover': {
+                        color: 'primary.dark',
+                      }
+                    }}
+                  >
+                    <ListItemText primary={item.title} />
+                  </ListItemButton>
+                </ListItem>
+              ))}
+            </List>
           </Grid>
-          
+          <Grid size={8}>
+            <Box
+              component="img"
+              sx={{
+                width: '100%',
+                height: 'auto',
+                maxWidth: '100%',
+              }}
+              src={home.art}
+              alt="artist_image"
+            />
+          </Grid>
         </Grid>
       </Container>
     );
