@@ -44,7 +44,7 @@ export const Home = () => {
             <Divider sx={{ borderColor: "black", borderWidth: 1, mb: 2 }} />
             <Typography variant="body1">{home.description}</Typography>
           </Grid>
-          <Grid size={4}>
+          <Grid size={4} sx={{ backgroundColor: 'white', p: 2, boxShadow: 3, borderRadius: 2 }}>
             <Typography variant="h5" sx={{ display: 'flex', alignItems: 'center' }}>
               <SquareIcon sx={{ mr: 0.4, fontSize: '1.2rem' }}></SquareIcon>GALLERIES
             </Typography>
