@@ -45,28 +45,6 @@ export const Top = () => {
                             </ListItem>
                         ))}
                     </List>
-                    {/* <ul>
-                        {elements.map((item) => (
-                            <li key={item.id} className="list-row">
-                                <Link 
-                                    to={`/home/${item.id}`}
-                                    style={{ textDecoration: 'none' }}
-                                >
-                                    <Typography 
-                                        variant="body1"
-                                        sx={{
-                                            color: '#000000',
-                                            '&:hover': {
-                                                color: 'primary.dark',
-                                            }
-                                        }}
-                                    >
-                                        {item.username}
-                                    </Typography>
-                                </Link>
-                            </li>
-                        ))}
-                    </ul> */}
                 </Box>
             </Container>
         </>
