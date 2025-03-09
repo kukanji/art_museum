@@ -21,14 +21,14 @@ export const Top = () => {
 
     return (
         <>
-            <Container maxWidth="lg" sx={{ mt: 3, display: 'flex', flexDirection: "column", alignItems: 'center', justifyContent: 'center'}}>
+            <Container maxWidth="lg" sx={{ mt: 3, display: 'flex', flexDirection: "column", alignItems: 'center'}}>
                 <Box sx={{ mt: 3, display: 'flex', flexDirection: "column", alignItems: 'center', justifyContent: 'center' }}>
                     <Typography variant="h4" sx={{ mb: 2 }}>
                         <SquareIcon sx={{ mr: 0.5  }}></SquareIcon>Welcome to the ArtMuseum
                     </Typography>
                     <Typography variant="body1">下記のリンクからアーティストのページが見れるよ</Typography>
                 </Box>
-                <Box sx={{ mt: 3, width: '450px', backgroundColor: 'white', p: 2, boxShadow: 3, borderRadius: 2, display: 'flex', flexDirection: "column", alignItems: 'center', justifyContent: 'center' }}>
+                <Box sx={{ mt: 3, width: '450px', height: '600px', backgroundColor: 'white', p: 2, boxShadow: 3, borderRadius: 2, display: 'flex', flexDirection: "column", alignItems: 'center' }}>
                     <Typography variant="h5" sx={{ display: 'flex', alignItems: 'center' }}>
                         <SquareIcon sx={{ mr: 0.4, fontSize: '1.2rem' }}></SquareIcon>ARTISTS
                     </Typography>
