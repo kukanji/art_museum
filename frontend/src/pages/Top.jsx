@@ -23,7 +23,7 @@ export const Top = () => {
         <>
             <Container>
                 <Box sx={{ mt: 3, display: 'flex', flexDirection: "column", alignItems: 'center', justifyContent: 'center' }}>
-                    <Typography variant="h4" sx={{ display: 'flex', alignItems: 'center' }}>
+                    <Typography variant="h4">
                         <SquareIcon sx={{ mr: 0.5  }}></SquareIcon>Welcome to the ArtMuseum
                     </Typography>
                     <Divider sx={{ borderColor: "black", borderWidth: 1, mb: 2 }} />
