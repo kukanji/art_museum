@@ -28,19 +28,20 @@ export const Top = () => {
                     </Typography>
                     <Typography variant="body1">下記のリンクからアーティストのページが見れるよ</Typography>
                 </Box>
-                <Box sx={{ mt: 3, display: 'flex', flexDirection: "column", alignItems: 'center' }}>
-                    <Typography variant="h5" sx={{ display: 'flex', alignItems: 'center' }}>
+                <Box sx={{ mt: 3, width: '400px', backgroundColor: 'white', p: 2, boxShadow: 1, borderRadius: 4, display: 'flex', flexDirection: "column", alignItems: 'center' }}>
+                    <Typography variant="h5" sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
                         <SquareIcon sx={{ mr: 0.4, fontSize: '1.2rem' }}></SquareIcon>ARTISTS
                     </Typography>
                     <List>
                         {elements.map((item) => (
                             <ListItem key={item.id} disablePadding>
                                 <ListItemButton component={Link} to={`/home/${item.id}`} sx={{
+                                    // width: '400px',
                                     '&:hover': {
                                         color: 'primary.main',
                                     }
                                 }}>
-                                    <ListItemText primary={item.username} />
+                                    <ListItemText primary={item.username} sx={{display: 'flex', flexDirection: "column", alignItems: 'center'}}/>
                                 </ListItemButton>
                             </ListItem>
                         ))}
