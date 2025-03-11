@@ -50,7 +50,7 @@ export const Gallery = () => {
             <Divider sx={{ borderColor: "black", borderWidth: 1, mb: 2 }} />
             <Typography variant="body1">{signleGallery.description}</Typography>
           </Grid>
-          <Grid size={4}>
+          <Grid size={3.6}>
             <Box sx={{ backgroundColor: 'white', p: 2, boxShadow: 1, borderRadius: 4 }}>
               <Typography variant="h5" sx={{ display: 'flex', alignItems: 'center' }}>
                 <SquareIcon sx={{ mr: 0.4, fontSize: '1.2rem' }}></SquareIcon>GALLERIES
@@ -75,17 +75,17 @@ export const Gallery = () => {
               </List>
             </Box>
           </Grid>
-          <Grid size={8}>
+          <Grid size={8.4}>
             <Grid container spacing={2}>
               {allArts.map((artItem) => (
                 <Grid size={6} key={artItem.id}>
-                  <Card>
+                  <Card sx={{boxShadow: 1, borderRadius: 4}}>
                     <CardHeader
                       title={artItem.title}
                     />
                     <CardMedia
                       component="img"
-                      height="140"
+                      // height="140"
                       image={artItem.thumbnail}
                       alt={artItem.title}
                     />
