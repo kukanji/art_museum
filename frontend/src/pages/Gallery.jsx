@@ -1,7 +1,7 @@
 import { useParams, useSearchParams, Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from 'react'
 import axios from 'axios';
-import { Container, Box, Typography, List, ListItem, ListItemText, ListItemButton, Divider, Card, CardHeader, CardContent, CardMedia } from '@mui/material';
+import { Container, Box, Typography, List, ListItem, ListItemText, ListItemButton, Divider, Card, CardHeader, CardContent, CardMedia, CardActionArea } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import SquareIcon from '@mui/icons-material/Square';
 
@@ -80,27 +80,31 @@ export const Gallery = () => {
               {allArts.map((artItem) => (
                 <Grid size={6} key={artItem.id}>
                   <Card sx={{boxShadow: 1, borderRadius: 4}}>
-                    <CardHeader
-                      title={artItem.title}
-                    />
-                    <CardMedia
-                      component="img"
-                      // height="140"
-                      image={artItem.thumbnail}
-                      alt={artItem.title}
-                    />
-                    <CardContent>
-                      <Typography variant="body2" sx={{
-                          color: 'text.secondary',
-                          overflow: 'hidden',
-                          textOverflow: 'ellipsis',
-                          display: '-webkit-box',
-                          WebkitBoxOrient: 'vertical',
-                          WebkitLineClamp: 2,
-                        }}>
-                        {artItem.description}
-                      </Typography>
-                    </CardContent>
+                    {/* <CardActionArea component={Link} to={{ pathname: `/gallery/${item.id}`, search: `?artist_id=${artistId}`}}> */}
+                    <CardActionArea>
+                      <CardHeader
+                        title={artItem.title}
+                      />
+                      <CardMedia
+                        component="img"
+                        // TODO: ここにJSで幅と合わせた高さを算出するコードを追加
+                        // height="100"
+                        image={artItem.thumbnail}
+                        alt={artItem.title}
+                      />
+                      <CardContent>
+                        <Typography variant="body2" sx={{
+                            color: 'text.secondary',
+                            overflow: 'hidden',
+                            textOverflow: 'ellipsis',
+                            display: '-webkit-box',
+                            WebkitBoxOrient: 'vertical',
+                            WebkitLineClamp: 2,
+                          }}>
+                          {artItem.description}
+                        </Typography>
+                      </CardContent>
+                    </CardActionArea>
                   </Card>
                 </Grid>
               ))}
