@@ -78,17 +78,17 @@ export const Gallery = () => {
           <Grid size={8}>
             <Grid container spacing={2}>
               {allArts.map((artItem) => (
-                <Grid size={6}>
+                <Grid size={6} key={artItem.id}>
                   <Card>
-                    <CardHeader>
+                    <CardHeader
                       title={artItem.title}
-                    </CardHeader>
-                    <CardMedia>
+                    />
+                    <CardMedia
                       component="img"
                       height="140"
                       image={artItem.thumbnail}
                       alt={artItem.title}
-                    </CardMedia>
+                    />
                     <CardContent>
                       <Typography variant="body2" sx={{ color: 'text.secondary' }}>
                         {artItem.description}
