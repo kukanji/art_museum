@@ -124,15 +124,17 @@ export const Gallery = () => {
             </Grid>
           </Grid>
         </Container>
-        <Dialog open={openDialog} onClose={closeDialog} maxWidth="lg" fullWidth>
-          <DialogTitle>{singleSelectedArt.title}</DialogTitle>
-          <DialogContent>
-            <img src={singleSelectedArt.art} alt={singleSelectedArt.title} style={{ width: '100%', height: 'auto' }} />
-            <Typography variant="body1" sx={{ mt: 2 }}>
-              {singleSelectedArt.description}
-            </Typography>
-          </DialogContent>
-        </Dialog>
+        {singleSelectedArt ? (
+          <Dialog open={openDialog} onClose={closeDialog} maxWidth="lg" fullWidth>
+            <DialogTitle>{singleSelectedArt.title}</DialogTitle>
+            <DialogContent>
+              <img src={singleSelectedArt.art} alt={singleSelectedArt.title} style={{ width: '100%', height: 'auto' }} />
+              <Typography variant="body1" sx={{ mt: 2 }}>
+                {singleSelectedArt.description}
+              </Typography>
+            </DialogContent>
+          </Dialog>
+        ) : null}
       </>
       // <>
       //   <div className="container">
