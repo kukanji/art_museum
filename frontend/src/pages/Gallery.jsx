@@ -1,7 +1,7 @@
 import { useParams, useSearchParams, Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from 'react'
 import axios from 'axios';
-import { Container, Box, Typography, List, ListItem, ListItemText, ListItemButton, Divider } from '@mui/material';
+import { Container, Box, Typography, List, ListItem, ListItemText, ListItemButton, Divider, Card, CardHeader, CardContent, CardMedia } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import SquareIcon from '@mui/icons-material/Square';
 
@@ -76,7 +76,28 @@ export const Gallery = () => {
             </Box>
           </Grid>
           <Grid size={8}>
-            
+            <Grid container spacing={2}>
+              {allArts.map((artItem) => (
+                <Grid size={6}>
+                  <Card>
+                    <CardHeader>
+                      title={artItem.title}
+                    </CardHeader>
+                    <CardMedia>
+                      component="img"
+                      height="140"
+                      image={artItem.thumbnail}
+                      alt={artItem.title}
+                    </CardMedia>
+                    <CardContent>
+                      <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                        {artItem.description}
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              ))}
+            </Grid>
           </Grid>
         </Grid>
       </Container>
