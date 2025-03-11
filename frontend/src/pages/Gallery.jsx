@@ -1,9 +1,10 @@
 import { useParams, useSearchParams, Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from 'react'
 import axios from 'axios';
-import { Container, Box, Typography, List, ListItem, ListItemText, ListItemButton, Divider, Card, CardHeader, CardContent, CardMedia, CardActionArea, Dialog, DialogTitle, DialogContent } from '@mui/material';
+import { Container, Box, Typography, Button, List, ListItem, ListItemText, ListItemButton, Divider, Card, CardHeader, CardContent, CardMedia, CardActionArea, Dialog, DialogTitle, DialogContent, DialogActions, colors } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import SquareIcon from '@mui/icons-material/Square';
+
 
 
 export const Gallery = () => {
@@ -56,7 +57,7 @@ export const Gallery = () => {
           <Grid container spacing={2} rowSpacing={10}>
             <Grid size={12}>
               <Typography variant="h4" sx={{ display: 'flex', alignItems: 'center' }}>
-                <SquareIcon sx={{ mr: 0.5  }}></SquareIcon>
+                <SquareIcon sx={{ mr: 0.5 }}></SquareIcon>
                 {signleGallery.title}
               </Typography>
               <Divider sx={{ borderColor: "black", borderWidth: 1, mb: 2 }} />
@@ -125,14 +126,31 @@ export const Gallery = () => {
           </Grid>
         </Container>
         {singleSelectedArt ? (
-          <Dialog open={openDialog} onClose={closeDialog} maxWidth="lg" fullWidth>
-            <DialogTitle>{singleSelectedArt.title}</DialogTitle>
+          <Dialog 
+            open={openDialog} 
+            onClose={closeDialog} 
+            maxWidth="lg" 
+            fullWidth
+            sx={{ '& .MuiDialog-paper': { borderRadius: 4 } }}
+          >
+            <DialogTitle>
+              <Typography variant="h4">
+                {singleSelectedArt.title}
+              </Typography>
+            </DialogTitle>
             <DialogContent>
               <img src={singleSelectedArt.art} alt={singleSelectedArt.title} style={{ width: '100%', height: 'auto' }} />
               <Typography variant="body1" sx={{ mt: 2 }}>
                 {singleSelectedArt.description}
               </Typography>
             </DialogContent>
+            <DialogActions sx={{ display: 'flex', justifyContent: 'center', p: 2}}>
+              <Button onClick={closeDialog} sx={{ color: "black"}}>
+                <Typography>
+                  Close
+                </Typography>
+              </Button>
+            </DialogActions>
           </Dialog>
         ) : null}
       </>
