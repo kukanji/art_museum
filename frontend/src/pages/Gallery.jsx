@@ -90,7 +90,14 @@ export const Gallery = () => {
                       alt={artItem.title}
                     />
                     <CardContent>
-                      <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                      <Typography variant="body2" sx={{
+                          color: 'text.secondary',
+                          overflow: 'hidden',
+                          textOverflow: 'ellipsis',
+                          display: '-webkit-box',
+                          WebkitBoxOrient: 'vertical',
+                          WebkitLineClamp: 2,
+                        }}>
                         {artItem.description}
                       </Typography>
                     </CardContent>
