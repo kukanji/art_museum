@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from 'react'
 import axios from 'axios';
-import { Container, Box, Button, AppBar, Toolbar, Typography } from '@mui/material';
+import { Container, Box, Typography, List, ListItem, ListItemText, ListItemButton, Divider } from '@mui/material';
+import SquareIcon from '@mui/icons-material/Square';
 
 export const Top = () => {
     const [elements, setElements] = useState([]);
@@ -20,30 +21,30 @@ export const Top = () => {
 
     return (
         <>
-            <Container>
-                <Box sx={{ mt: 3 }}>
-                    <ul>
+            <Container maxWidth="lg" sx={{ mt: 3, display: 'flex', flexDirection: "column", alignItems: 'center'}}>
+                <Box sx={{ mt: 3, display: 'flex', flexDirection: "column", alignItems: 'center', justifyContent: 'center' }}>
+                    <Typography variant="h4" sx={{ mb: 2 }}>
+                        <SquareIcon sx={{ mr: 0.5  }}></SquareIcon>Welcome to the ArtMuseum
+                    </Typography>
+                    <Typography variant="body1">下記のリンクからアーティストのページが見れるよ</Typography>
+                </Box>
+                <Box sx={{ mt: 3, width: '400px', backgroundColor: 'white', p: 2, boxShadow: 1, borderRadius: 4, display: 'flex', flexDirection: "column", alignItems: 'center' }}>
+                    <Typography variant="h5" sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+                        <SquareIcon sx={{ mr: 0.4, fontSize: '1.2rem' }}></SquareIcon>ARTISTS
+                    </Typography>
+                    <List>
                         {elements.map((item) => (
-                            <li key={item.id} className="list-row">
-                                <Link 
-                                    to={`/home/${item.id}`}
-                                    style={{ textDecoration: 'none' }}
-                                >
-                                    <Typography 
-                                        variant="body1"
-                                        sx={{
-                                            color: 'primary.main',
-                                            '&:hover': {
-                                                color: 'primary.dark',
-                                            }
-                                        }}
-                                    >
-                                        {item.username}
-                                    </Typography>
-                                </Link>
-                            </li>
+                            <ListItem key={item.id} disablePadding>
+                                <ListItemButton component={Link} to={`/home/${item.id}`} sx={{
+                                    '&:hover': {
+                                        color: 'primary.main',
+                                    }
+                                }}>
+                                    <ListItemText primary={item.username} sx={{display: 'flex', flexDirection: "column", alignItems: 'center'}}/>
+                                </ListItemButton>
+                            </ListItem>
                         ))}
-                    </ul>
+                    </List>
                 </Box>
             </Container>
         </>

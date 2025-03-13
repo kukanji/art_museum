@@ -2,6 +2,10 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from 'react'
 import axios from 'axios';
+import { Container, Box, Typography, List, ListItem, ListItemText, ListItemButton, Divider } from '@mui/material';
+import Grid from '@mui/material/Grid2';
+import SquareIcon from '@mui/icons-material/Square';
+
 
 export const Home = () => {
     const params = useParams();
@@ -31,34 +35,54 @@ export const Home = () => {
     }, []);
 
     return (
-      <>
-        <div className="container">
-          <div className="header-area">
-              <h2>HOME PAGE</h2>
-              <p>{home.description}</p>
-          </div>
-          <div className="home-art-area">
-              <img src={home.art} alt="artist_image"/>
-          </div>
-          <div className="sidebar-area">
-              <nav>
-                  <ul>
-                      {galleries.map((item) => (
-                          <div key={item.id}>
-                              <li className="list-row">
-                                  <Link to={{ pathname: `/gallery/${item.id}`, search: `?artist_id=${artistId}`}}>{item.title}</Link>
-                              </li>
-                          </div>
-                      ))}
-                  </ul>
-              </nav>
-          </div>
-          <div className="footer-area"> 
-            <a href={home.url} target="_blank" rel="noreferrer">instagramを見る</a>
-            <a href={home.twitter} target="_blank" rel="noreferrer">twitterを見る</a>
-            <p>© 2024 ArtMuseum</p>                      
-          </div>
-        </div>
-      </>
+      <Container maxWidth="lg" sx={{ mt: 3 }}>
+        <Grid container spacing={2} rowSpacing={10}>
+          <Grid size={12}>
+            <Typography variant="h4" sx={{ display: 'flex', alignItems: 'center' }}>
+              <SquareIcon sx={{ mr: 0.5  }}></SquareIcon>ARTIST PAGE
+            </Typography>
+            <Divider sx={{ borderColor: "black", borderWidth: 1, mb: 2 }} />
+            <Typography variant="body1">{home.description}</Typography>
+          </Grid>
+          <Grid size={4}>
+            <Box sx={{ backgroundColor: 'white', p: 2, boxShadow: 1, borderRadius: 4 }}>
+              <Typography variant="h5" sx={{ display: 'flex', alignItems: 'center' }}>
+                <SquareIcon sx={{ mr: 0.4, fontSize: '1.2rem' }}></SquareIcon>GALLERIES
+              </Typography>
+              <Divider sx={{ borderColor: "black", borderWidth: 1 }} />
+              <List>
+                {galleries.map((item) => (
+                  <ListItem key={item.id} disablePadding>
+                    <ListItemButton 
+                      component={Link} 
+                      to={{ pathname: `/gallery/${item.id}`, search: `?artist_id=${artistId}`}}
+                      sx={{
+                        '&:hover': {
+                          color: 'primary.main',
+                        }
+                      }}
+                    >
+                      <ListItemText primary={item.title} />
+                    </ListItemButton>
+                  </ListItem>
+                ))}
+              </List>
+            </Box>           
+          </Grid>
+          <Grid size={8}>
+            <Box
+              component="img"
+              sx={{
+                width: '100%',
+                height: 'auto',
+                maxWidth: '100%',
+                borderRadius: 4
+              }}
+              src={home.art}
+              alt="artist_image"
+            />
+          </Grid>
+        </Grid>
+      </Container>
     );
 };
