@@ -36,7 +36,6 @@ export const Top = () => {
                         {elements.map((item) => (
                             <ListItem key={item.id} disablePadding>
                                 <ListItemButton component={Link} to={`/home/${item.id}`} sx={{
-                                    // width: '400px',
                                     '&:hover': {
                                         color: 'primary.main',
                                     }
