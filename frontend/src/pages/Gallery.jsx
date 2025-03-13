@@ -156,46 +156,5 @@ export const Gallery = () => {
           </Dialog>
         ) : null}
       </>
-      // <>
-      //   <div className="container">
-      //     <div className="header-area">
-      //         <h2>{signleGallery.title}</h2>
-      //         <p>{signleGallery.description}</p>
-      //     </div>
-      //     <div className="gallery-art-container">
-      //         {allArts.map((artItem) => (
-      //             <div className="art-container" key={artItem.id}>
-      //               <div className="art-header">
-      //                 <p>{artItem.title}</p>
-      //               </div>
-      //               <div className="art-body">
-      //                   <a href={artItem.art}>
-      //                     <img src={artItem.thumbnail} alt={artItem.title}/>
-      //                   </a>
-      //                   {/* <img src={artItem.art} alt="artist_image"/> */}
-      //               </div>
-      //               <div className="art-footer">
-      //                 <p>{artItem.description}</p>
-      //                 {/* <p>{artItem.like_sum}</p> */}
-      //               </div>
-      //             </div>
-      //         ))}
-      //     </div>
-      //     <div className="sidebar-area">
-      //         <nav>
-      //             <ul>
-      //                 {multipleGalleries.map((galleryitem) => (
-      //                     <li className="list-row" key={galleryitem.id}>
-      //                         <Link to={{ pathname: `/gallery/${galleryitem.id}`, search: `?artist_id=${artistId}`}}>{galleryitem.title}</Link>
-      //                     </li>
-      //                 ))}
-      //             </ul>
-      //         </nav>
-      //     </div>
-      //     <div className="footer-area">
-      //       <p>© 2024 ArtMuseum</p>                      
-      //     </div>
-      //   </div>
-      // </>
     );
 };
