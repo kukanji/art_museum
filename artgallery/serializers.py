@@ -24,7 +24,7 @@ class GallerySerializer(serializers.ModelSerializer):
 class ArtSerializer(serializers.ModelSerializer):
     class Meta:
         model = Art
-        fields = ['id', 'gallery', 'art', 'title', 'description', 'like_sum', 'created_at', 'updated_at']
+        fields = ['id', 'gallery', 'thumbnail', 'art', 'title', 'description', 'like_sum', 'created_at', 'updated_at']
 
 
 class CommentSerializer(serializers.ModelSerializer):
