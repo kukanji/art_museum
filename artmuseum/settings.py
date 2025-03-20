@@ -54,7 +54,7 @@ ALLOWED_HOSTS = [
     'backend.artmuseum.y-kanji.com',
     'ec2-34-224-66-81.compute-1.amazonaws.com',
 ]
-ALLOWED_HOSTS.append(gethostbyname(gethostname()))
+ALLOWED_HOSTS.append(f"{gethostbyname(gethostname())}:8000")
 
 
 # Application definition
