@@ -9,6 +9,7 @@ class GalleryViewSet(viewsets.ModelViewSet):
     # get_querysetメソッドにオーバーライド
     def get_queryset(self):
         artist_id = self.request.query_params.get('artist_id')
+        print("gallery_artist_id", artist_id)
         if artist_id:
             return Gallery.objects.filter(artist_id=artist_id)
         return Gallery.objects.all()
