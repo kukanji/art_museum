@@ -52,6 +52,7 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     'artmuseum.y-kanji.com',
     'backend.artmuseum.y-kanji.com',
+    'artmuseum-lb-1422833245.us-east-1.elb.amazonaws.com',
     '172.31.24.136',
 ]
 
