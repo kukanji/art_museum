@@ -50,6 +50,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'artmuseum.y-kanji.com',
+    'backend.artmuseum.y-kanji.com',
     'ec2-34-224-66-81.compute-1.amazonaws.com',
 ]
 
