@@ -52,8 +52,8 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     'artmuseum.y-kanji.com',
     'backend.artmuseum.y-kanji.com',
+    '172.31.24.136',
 ]
-ALLOWED_HOSTS.append(gethostbyname(gethostname()))
 
 
 # Application definition
