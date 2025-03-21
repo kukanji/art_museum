@@ -89,11 +89,12 @@ http://artmuseum.y-kanji.com
 | ------------------- | --------------------------------------------------   |
 | Frontend            | JavaScript, React, Vite, Material UI                 |
 | Backend             | Python, Django, DjangoRESTFramework                  |
-| Infrastructure      | AWS (Amazon EC2, CloudFront, Route53, Application Road Balancer)                                                                    |
+| Infrastructure      | AWS (Amazon EC2, CloudFront, Route53, Application Load Balancer)                                                                    |
 | Database            | PostgreSQL                                           |
 | Virtual Environment | Docker                                               |
 | Diagram             | Draw.io                                              |
 | Version Control     | Git, GitHub                                          |
+| Other Tools         | Cursor, DBeaver, Draw.io
 
 ## システム構成図
 ![システム構成図](/docs/システム構成図.png)
