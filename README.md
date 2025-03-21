@@ -81,6 +81,7 @@ http://artmuseum.y-kanji.com
 |![GalleryPageDownward](/docs/gallery_page_downward.png) |
 | 左側のナビゲーションバーには他のギャラリーへのリンクを実装しました。 | あああ。 | -->
 </details>
+<br />
 
 ## 使用技術
 
