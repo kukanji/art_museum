@@ -93,6 +93,7 @@ CORS_ALLOWED_ORIGINS = [
     'http://artmuseum.y-kanji.com',
     'https://artmuseum.y-kanji.com',
     'http://ec2-34-224-66-81.compute-1.amazonaws.com',
+    'https://backend.artmuseum.y-kanji.com',
 ]
 
 ROOT_URLCONF = 'artmuseum.urls'
