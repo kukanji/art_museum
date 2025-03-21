@@ -91,6 +91,7 @@ CORS_ALLOWED_ORIGINS = [
     'http://artmuseum.y-kanji.com:5173',
     'http://ec2-34-224-66-81.compute-1.amazonaws.com:5173',
     'http://artmuseum.y-kanji.com',
+    'https://artmuseum.y-kanji.com',
     'http://ec2-34-224-66-81.compute-1.amazonaws.com',
 ]
 
