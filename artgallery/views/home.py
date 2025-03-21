@@ -11,4 +11,4 @@ class HomeViewSet(viewsets.ModelViewSet):
         print("home_artist_id", artist_id)
         if artist_id:
             return Home.objects.filter(artist_id=artist_id)
-        return Home.objects.none()
+        return Home.objects.select_related('artist').all()
