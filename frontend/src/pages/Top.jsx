@@ -9,7 +9,7 @@ export const Top = () => {
     useEffect(() => {
     const fetchElements = async () => {
       try {
-        const response = await axios.get(`${import.meta.env.VITE_API_URL}/top/`);
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/home/`);
         console.log(response.data);
         setElements(response.data);
       } catch (error) {
@@ -35,12 +35,12 @@ export const Top = () => {
                     <List>
                         {elements.map((item) => (
                             <ListItem key={item.id} disablePadding>
-                                <ListItemButton component={Link} to={`/home/${item.id}`} sx={{
+                                <ListItemButton component={Link} to={`/home/${item.artist.id}`} sx={{
                                     '&:hover': {
                                         color: 'primary.main',
                                     }
                                 }}>
-                                    <ListItemText primary={item.username} sx={{display: 'flex', flexDirection: "column", alignItems: 'center'}}/>
+                                    <ListItemText primary={item.artist.username} sx={{display: 'flex', flexDirection: "column", alignItems: 'center'}}/>
                                 </ListItemButton>
                             </ListItem>
                         ))}
