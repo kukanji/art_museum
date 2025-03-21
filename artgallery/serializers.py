@@ -10,6 +10,8 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class HomeSerializer(serializers.ModelSerializer):
+    artist = UserSerializer(read_only=True)
+
     class Meta:
         model = Home
         fields = ['id', 'artist', 'art', 'description', 'instagram', 'twitter', 'created_at', 'updated_at']
