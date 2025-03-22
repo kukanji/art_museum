@@ -11,7 +11,13 @@ class UserSerializer(serializers.ModelSerializer):
 
 class HomeSerializer(serializers.ModelSerializer):
     artist = UserSerializer(read_only=True)
+    thumbnail = serializers.SerializerMethodField()
 
+    def get_thumbnail(self, obj):
+        if obj.thumbnail:
+            return f'https://backend.artmuseum.y-kanji.com/{obj.thumbnail.url}'
+        return None
+    
     class Meta:
         model = Home
         fields = ['id', 'artist', 'art', 'description', 'instagram', 'twitter', 'created_at', 'updated_at']
