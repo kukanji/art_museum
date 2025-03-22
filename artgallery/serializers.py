@@ -11,11 +11,11 @@ class UserSerializer(serializers.ModelSerializer):
 
 class HomeSerializer(serializers.ModelSerializer):
     artist = UserSerializer(read_only=True)
-    thumbnail = serializers.SerializerMethodField()
+    art = serializers.SerializerMethodField()
 
-    def get_thumbnail(self, obj):
-        if obj.thumbnail:
-            return f'https://backend.artmuseum.y-kanji.com/{obj.thumbnail.url}'
+    def get_art(self, obj):
+        if obj.art:
+            return f'https://backend.artmuseum.y-kanji.com{obj.art.url}'
         return None
     
     class Meta:
@@ -34,7 +34,7 @@ class ArtSerializer(serializers.ModelSerializer):
 
     def get_thumbnail(self, obj):
         if obj.thumbnail:
-            return f'https://backend.artmuseum.y-kanji.com/{obj.thumbnail.url}'
+            return f'https://backend.artmuseum.y-kanji.com{obj.thumbnail.url}'
         return None
 
     class Meta:
