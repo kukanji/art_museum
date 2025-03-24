@@ -81,6 +81,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware', # ネットにはcorsheaders.middleware.CorsMiddlewareと書かれていた
+    'artmuseum.log_requests.HeadersLoggingMiddleware',
 ]
 
 CORS_ALLOWED_ORIGINS = [
