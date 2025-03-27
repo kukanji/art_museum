@@ -94,6 +94,7 @@ CORS_ALLOWED_ORIGINS = [
     'http://artmuseum.y-kanji.com',
     'https://artmuseum.y-kanji.com',
     'http://ec2-34-224-66-81.compute-1.amazonaws.com',
+    'http://backend.artmuseum.y-kanji.com',
     'https://backend.artmuseum.y-kanji.com',
 ]
 
@@ -176,3 +177,7 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://backend.artmuseum.y-kanji.com',
+]
