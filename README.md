@@ -1,8 +1,7 @@
 ![ヘッダー画像](/docs/artmuseum_header.png)
 
 ## サービスのURL
-現在、一番上のナビゲーションバーは"display top page"という部分以外はまだ実装できていません。<br />
-http://artmuseum.y-kanji.com
+https://artmuseum.y-kanji.com
 
 ## 経緯
 このプロダクトはイラストの管理をもっと簡単にしたいという思いから作りました。<br />
