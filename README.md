@@ -100,7 +100,7 @@ https://artmuseum.y-kanji.com
 | Other Tools         | Cursor, DBeaver, Draw.io
 
 ## システム構成図
-![システム構成図](/docs/システム構成図.png)
+![システム構成図](/docs/release_version2/システム構成図.png)
 <br />
 
 ## ER図
