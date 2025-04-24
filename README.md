@@ -67,6 +67,10 @@ https://artmuseum.y-kanji.com
 | ---- |
 | ![GalleryPageUpward](/docs/release_version1/gallery_page_upward.png)![GalleryPageDownward](/docs/release_version1/gallery_page_downward.png) |
 | 画像とタイトル、概要をそれぞれ一つの枠組みとして画像を横2列に配置しました。左側のナビゲーションバーから他のギャラリーへ移動することが出来ます。 |
+
+| システム構成図 |
+| ----|
+| ![システム構成図](/docs/release_version1/システム構成図.png) |
 <br />
 
 <!-- | トップ画面 |　ホーム画面 |
