@@ -14,7 +14,7 @@ export const NavBar = () => {
                 </Typography>
               </Button>
             </Box>
-            <Box>
+            {/* <Box>
               <Button variant="outlined" color="inherit" sx={{ mr: 1, textTransform: 'none', backgroundColor: '#ffffff',
                   color: '#000000', '&:hover': {
                     backgroundColor: 'rgba(255, 255, 255, 0.7)'
@@ -27,7 +27,7 @@ export const NavBar = () => {
                   }}} component={Link} to="/register">
                   Register
               </Button>
-            </Box>
+            </Box> */}
           </Toolbar>
         </Container>
       </AppBar>
