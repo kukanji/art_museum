@@ -15,19 +15,19 @@ class HomeAdmin(admin.ModelAdmin):
 
 
 class GalleryAdmin(admin.ModelAdmin):
-    list_display = ('artist', 'title', 'description', 'created_at', 'updated_at')
+    list_display = ('title', 'artist', 'description', 'created_at', 'updated_at')
 
 
 class ArtAdmin(admin.ModelAdmin):
-    list_display = ('_gallery','thumbnail', 'art', 'title', 'description', 'like_sum', 'created_at', 'updated_at')
-    readonly_fields = ('thumbnail',)
+    list_display = ('title', 'thumbnail_img', 'description', '_gallery', 'art', 'like_sum', 'created_at', 'updated_at')
+    readonly_fields = ('thumbnail_img',)
 
-    def thumbnail(self, obj):
+    def thumbnail_img(self, obj):
         if obj.art:
             return mark_safe(f'<img src="{obj.art.url}" width="100" height="100" />')
         return "No Image"
     
-    thumbnail.short_description = 'Thumbnail'
+    thumbnail_img.short_description = 'Thumbnail'
 
     def _gallery(self, obj):
         return ', '.join(single_gallery.title for single_gallery in obj.gallery.all())
