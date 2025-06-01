@@ -1,0 +1,40 @@
+{
+  "rules": {
+    "formatting": {
+      "indentSize": 4,
+      "useTabs": false,
+      "lineEnding": "lf"
+    },
+    "linting": {
+      "python": {
+        "maxLineLength": 100,
+        "ignorePatterns": [
+          "migrations/*",
+          "*/migrations/*"
+        ]
+      },
+      "javascript": {
+        "maxLineLength": 100,
+        "semi": true
+      }
+    },
+    "git": {
+      "commitMessageFormat": "feat|fix|docs|style|refactor|test|chore: {message}",
+      "branchNaming": "feature|bugfix|hotfix|release/{name}"
+    },
+    "editor": {
+      "trimTrailingWhitespace": true,
+      "insertFinalNewline": true,
+      "ensureNewlineAtEndOfFile": true
+    },
+    "ignore": [
+      "*.pyc",
+      "__pycache__",
+      "*.log",
+      "node_modules",
+      ".env*",
+      "media/*",
+      "static/*"
+    ]
+  }
+} 
