@@ -1,6 +1,7 @@
 ![ヘッダー画像](/docs/artmuseum_header.png)
 
 ## サービスのURL
+現在、サーバーを停止しているため、以下のリンクからサービスを閲覧することは出来ません。
 https://artmuseum.y-kanji.com
 
 ## 経緯
